@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c57yc4fdslxy8"]
+
+[ext_resource type="Script" uid="uid://chj6mssyaut64" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://buedxuqh1peyk" path="res://icon.svg" id="2_onrkg"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_c4nxb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c4nxb"]
+
+[node name="Player" type="CharacterBody2D" unique_id=1424454092]
+script = ExtResource("1_4flbx")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=765223380]
+scale = Vector2(20, 20)
+mesh = SubResource("QuadMesh_c4nxb")
+texture = ExtResource("2_onrkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=63531711]
+shape = SubResource("CircleShape2D_c4nxb")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=789977764]
+position = Vector2(2, -45)

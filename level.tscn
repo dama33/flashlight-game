@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bfs1mxhgtokwq"]
+
+[ext_resource type="Texture2D" uid="uid://buedxuqh1peyk" path="res://icon.svg" id="1_u52ul"]
+[ext_resource type="PackedScene" uid="uid://c57yc4fdslxy8" path="res://player.tscn" id="2_vonw3"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_w3ivq"]
+
+[node name="Node2D" type="Node2D" unique_id=720652374]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=587828682]
+position = Vector2(0, -39.499985)
+rotation = 3.1415927
+scale = Vector2(-730.067, 700)
+mesh = SubResource("QuadMesh_w3ivq")
+texture = ExtResource("1_u52ul")
+
+[node name="Player" parent="." unique_id=1424454092 instance=ExtResource("2_vonw3")]
