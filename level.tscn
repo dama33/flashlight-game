@@ -82,3 +82,6 @@ tile_set = SubResource("TileSet_i3pqv")
 
 [node name="Checkpoint" parent="NavigationRegion2D" unique_id=243302455 instance=ExtResource("10_8cye3")]
 position = Vector2(34, 59)
+
+[node name="Checkpoint" parent="." unique_id=1342076543 instance=ExtResource("10_8cye3")]
+position = Vector2(-268, -23)

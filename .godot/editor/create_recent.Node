@@ -1,9 +1,0 @@
-Label
-CanvasLayer
-CollisionShape2D
-Area2D
-MeshInstance2D
-Timer
-NavigationAgent2D
-CharacterBody2D
-CollisionPolygon2D

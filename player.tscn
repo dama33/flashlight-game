@@ -21,6 +21,7 @@
 [sub_resource type="QuadMesh" id="QuadMesh_c4nxb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c4nxb"]
+radius = 19.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c4nxb"]
 animations = [{
@@ -93,17 +94,16 @@ shape = SubResource("CircleShape2D_c4nxb")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=789977764]
 zoom = Vector2(2, 2)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1179870821]
-
-[node name="Node2D" type="Node2D" parent="Area2D" unique_id=330850516]
+[node name="Node2D" type="Node2D" parent="." unique_id=330850516]
 position = Vector2(100, 0)
 rotation = 1.5707964
 
-[node name="PointLight2D" type="PointLight2D" parent="Area2D/Node2D" unique_id=1457794309]
-position = Vector2(4.371139e-06, 100)
+[node name="PointLight2D" type="PointLight2D" parent="Node2D" unique_id=1457794309]
+position = Vector2(12.000004, 72.00001)
+scale = Vector2(1, 1.0084343)
 shadow_enabled = true
 texture = ExtResource("3_i3pqv")
-offset = Vector2(0, -101.5)
+offset = Vector2(0, -106.04)
 texture_scale = 0.1
 
 [node name="SlowTimer" type="Timer" parent="." unique_id=2123527684]
@@ -114,8 +114,12 @@ one_shot = true
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_c4nxb")
 animation = &"grab"
-frame = 5
-frame_progress = 1.0
+
+[node name="RespawnTimer" type="Timer" parent="." unique_id=1279535859]
+unique_name_in_owner = true
+wait_time = 3.0
+one_shot = true
 
 [connection signal="timeout" from="SlowTimer" to="." method="_on_slow_timer_timeout"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]
