@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://cd4rl5hx0g4ai"]
 
-<<<<<<< Updated upstream
 [sub_resource type="SphereMesh" id="SphereMesh_qkbnx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1mv1j"]
@@ -16,29 +15,3 @@ mesh = SubResource("SphereMesh_qkbnx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1307318851]
 shape = SubResource("CircleShape2D_1mv1j")
-=======
-[ext_resource type="Script" uid="uid://bq376lj00d1ft" path="res://checkpoint.gd" id="1_ir6d7"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_mnow7"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_1mv1j"]
-radius = 17.0
-
-[node name="Checkpoint" type="Node2D" unique_id=243302455]
-script = ExtResource("1_ir6d7")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=820149786]
-self_modulate = Color(0, 1, 1, 1)
-position = Vector2(0, 0.5000025)
-scale = Vector2(16.01814, 17.000002)
-mesh = SubResource("SphereMesh_mnow7")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=779293631]
-collision_layer = 4
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1826746472]
-shape = SubResource("CircleShape2D_1mv1j")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
->>>>>>> Stashed changes
