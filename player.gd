@@ -23,8 +23,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	
-
-
 func _on_collision_polygon_2d_draw() -> void:
 	pass
 
