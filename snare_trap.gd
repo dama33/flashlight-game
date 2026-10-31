@@ -12,6 +12,6 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	Player.MainPlayer.SlowTimer.start()
-	Player.MainPlayer.speed_scalar = .5
+	Player.instance.SlowTimer.start()
+	Player.instance.speed_scalar = .5
 	pass # Replace with function body.
