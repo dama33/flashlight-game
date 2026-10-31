@@ -2,23 +2,11 @@
 
 [ext_resource type="Script" uid="uid://chj6mssyaut64" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://buedxuqh1peyk" path="res://icon.svg" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://bojhnbfnhwaau" path="res://assets/FlashlightTexture.png" id="3_i3pqv"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_c4nxb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c4nxb"]
-
-[sub_resource type="Gradient" id="Gradient_onrkg"]
-offsets = PackedFloat32Array(0, 0.8, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1)
-metadata/_snap_enabled = true
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_c4nxb"]
-gradient = SubResource("Gradient_onrkg")
-width = 100
-height = 100
-fill = 3
-fill_from = Vector2(0, 0.49347827)
-fill_to = Vector2(0.76521736, 0.9695652)
 
 [node name="Player" type="CharacterBody2D" unique_id=1424454092]
 script = ExtResource("1_4flbx")
@@ -39,8 +27,12 @@ zoom = Vector2(2, 2)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=22475311]
 polygon = PackedVector2Array(0, 0, 100, -50, 100, 50)
 
-[node name="PointLight2D" type="PointLight2D" parent="Area2D/CollisionPolygon2D" unique_id=1457794309]
-texture = SubResource("GradientTexture2D_c4nxb")
-offset = Vector2(50, 0)
+[node name="Node2D" type="Node2D" parent="Area2D" unique_id=330850516]
+position = Vector2(100, 0)
+rotation = 1.5707964
+
+[node name="PointLight2D" type="PointLight2D" parent="Area2D/Node2D" unique_id=1457794309]
+texture = ExtResource("3_i3pqv")
+texture_scale = 0.1
 
 [connection signal="draw" from="Area2D/CollisionPolygon2D" to="." method="_on_collision_polygon_2d_draw"]
