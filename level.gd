@@ -5,11 +5,6 @@ extends Node2D
 const MONSTER_SCENE = preload("res://Monster.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-<<<<<<< Updated upstream
-	#spawn_monster()
-=======
-	
->>>>>>> Stashed changes
 	pass # Replace with function body.
 @onready var tile_map_layer: TileMapLayer = $TileMapLayer
 
