@@ -15,3 +15,10 @@ mesh = SubResource("SphereMesh_qkbnx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1307318851]
 shape = SubResource("CircleShape2D_1mv1j")
+
+[node name="Prompt" type="Label" parent="." unique_id=272656344]
+unique_name_in_owner = true
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+horizontal_alignment = 1

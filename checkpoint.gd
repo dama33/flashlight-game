@@ -2,6 +2,7 @@ extends Node2D
 
 @export var note_title := "Note title"
 @export_multiline var note_text := ""
+@onready var Prompt:Label = %Prompt
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
