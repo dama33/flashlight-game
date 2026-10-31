@@ -12,7 +12,7 @@ const AGGRO_RANGE = 500.0
 # At this distance or farther, error is max
 @export var error_falloff := 300.0
 # Seconds between new guesses
-@export var repath_interval := 0.6
+@export var repath_interval := 0.8
 @onready var navi_agent: NavigationAgent2D = $NavigationAgent2D
 var _repath_timer := 0.0
 
