@@ -6,6 +6,9 @@ var speed_scalar = 1.0
 static var MainPlayer:Player
 @onready var SlowTimer:Timer = %SlowTimer
 
+const max_health = 5
+var current_health = 5
+@onready var health_component:Node2D = %HealthComponent
 
 func _ready():
 	MainPlayer = self
@@ -29,3 +32,8 @@ func _on_collision_polygon_2d_draw() -> void:
 
 func _on_slow_timer_timeout() -> void:
 	speed_scalar = 1.0
+
+func take_damage(damage:int):
+	current_health-=damage
+	if current_health <= 0:
+		pass #die
