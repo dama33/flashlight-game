@@ -39,6 +39,7 @@ sources/0 = SubResource("TileSetAtlasSource_km5ld")
 
 [node name="Node2D" type="Node2D" unique_id=720652374]
 script = ExtResource("1_km5ld")
+monster_scene = ExtResource("7_n6hdu")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2037092492]
 color = Color(0.28688657, 0.28111443, 0.2654864, 1)
