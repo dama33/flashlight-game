@@ -1,0 +1,16 @@
+# Godot 4+ cache and engine-generated files
+.godot/
+
+# Godot 3 cache and importer files
+.import/
+
+# Godot-specific binary translation files (generated from CSVs)
+*.translation
+
+# Godot export presets configuration
+# UNCOMMENT the line below if your export presets contain secret API keys or credentials
+# export_presets.cfg
+
+# Crash dumps and temporary logs
+*.log
+*.tmp
