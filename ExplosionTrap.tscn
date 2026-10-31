@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dju103cu6jk3h"]
+
+[ext_resource type="Script" uid="uid://bvbvwaveydb4v" path="res://explosion_trap.gd" id="1_mjnbr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1mv1j"]
+
+[node name="ExplosionTrap" type="Node2D" unique_id=1845037286]
+script = ExtResource("1_mjnbr")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=975949786]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1779424287]
+shape = SubResource("CircleShape2D_1mv1j")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

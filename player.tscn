@@ -43,4 +43,8 @@ polygon = PackedVector2Array(0, 0, 100, -50, 100, 50)
 texture = SubResource("GradientTexture2D_c4nxb")
 offset = Vector2(50, 0)
 
+[node name="SlowTimer" type="Timer" parent="." unique_id=2123527684]
+unique_name_in_owner = true
+one_shot = true
+
 [connection signal="draw" from="Area2D/CollisionPolygon2D" to="." method="_on_collision_polygon_2d_draw"]

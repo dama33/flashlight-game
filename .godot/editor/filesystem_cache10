@@ -1,0 +1,11 @@
+78098b89c88a74ebe8c20117b8754620
+::res://::1793469681
+icon.svg::CompressedTexture2D::3798679367245361090::1793469265::1793469681::1::::<><><>0<>0<>c446fe42ed08b750a5cc5aedb933785c<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+level.tscn::PackedScene::2776124991944375492::1793469265::0::1::::<><><>0<>0<><>::uid://buedxuqh1peyk::::res://icon.svg<>uid://c57yc4fdslxy8::::res://player.tscn<>uid://btpcnoueyqvua::::res://wall.tscn
+player.gd::GDScript::5284647303259627303::1793469265::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene::6946029075133287749::1793469265::0::1::::<><><>0<>0<><>::uid://chj6mssyaut64::::res://player.gd<>uid://buedxuqh1peyk::::res://icon.svg
+README.md::TextFile::-1::1793469265::0::1::::<><><>0<>0<><>::
+wall.tscn::PackedScene::3751119794870367484::1793469265::0::1::::<><><>0<>0<><>::
+::res://assets/::1793469265
+empty.txt::TextFile::-1::1793469265::0::1::::<><><>0<>0<><>::
+FlashlightTexture.png::CompressedTexture2D::3388092189530473108::1793469265::1793469682::1::::<><><>0<>0<>f47013501e2c9571d876cb4debac792f<>res://.godot/imported/FlashlightTexture.png-4f7aa065582004f42bcbe2b0c7ab4c1f.ctex::

@@ -1,0 +1,6 @@
+res://snare_trap.gd
+res://SnareTrap.tscn
+res://player.gd
+res://player.tscn
+res://ExplosionTrap.tscn
+res://explosion_trap.gd
