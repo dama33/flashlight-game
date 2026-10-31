@@ -9,7 +9,8 @@
 
 # Godot export presets configuration
 # UNCOMMENT the line below if your export presets contain secret API keys or credentials
-# export_presets.cfg
+export_presets.cfg
+*.cfg
 
 # Crash dumps and temporary logs
 *.log

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cd4rl5hx0g4ai"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_qkbnx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1mv1j"]
+
+[node name="Checkpoint" type="Node2D" unique_id=243302455]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1523790519]
+position = Vector2(-5.9604645e-08, 5.9604645e-07)
+scale = Vector2(4.004536, 4.000001)
+mesh = SubResource("SphereMesh_qkbnx")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=852616933]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1307318851]
+shape = SubResource("CircleShape2D_1mv1j")
