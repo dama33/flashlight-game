@@ -2,6 +2,38 @@
 
 [ext_resource type="Script" uid="uid://d3ujtaijxouxv" path="res://monster.gd" id="1_vb3nq"]
 [ext_resource type="Script" uid="uid://bimqqcdpy7ses" path="res://monster_attack_range_area.gd" id="2_ssiii"]
+[ext_resource type="Texture2D" uid="uid://cvyxxv0nc0f1v" path="res://assets/Enemy Sprite/Enemy 1.png" id="2_xpqxr"]
+[ext_resource type="Texture2D" uid="uid://5ufx6oftaghl" path="res://assets/Enemy Sprite/Enemy 2.png" id="3_voqyd"]
+[ext_resource type="Texture2D" uid="uid://cbxgqjf7lyb15" path="res://assets/Enemy Sprite/Enemy 3.png" id="4_ll686"]
+[ext_resource type="Texture2D" uid="uid://dqmoxfj4qmwj8" path="res://assets/Enemy Sprite/Enemy 4.png" id="5_gyaoo"]
+[ext_resource type="Texture2D" uid="uid://b5w6xwuvksyqg" path="res://assets/Enemy Sprite/Enemy 5.png" id="6_k6i1l"]
+[ext_resource type="Texture2D" uid="uid://cn8vdg2a1l0g0" path="res://assets/Enemy Sprite/Enemy 6.png" id="7_re2lt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c4nxb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xpqxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_voqyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ll686")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gyaoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_k6i1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_re2lt")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="SphereMesh" id="SphereMesh_vb3nq"]
 
@@ -13,6 +45,12 @@ radius = 22.022715
 
 [node name="Monster" type="CharacterBody2D" unique_id=1333855396]
 script = ExtResource("1_vb3nq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=959750076]
+position = Vector2(179, -139)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_c4nxb")
+frame_progress = 0.9305061
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1251972312]
 position = Vector2(-2.3841858e-07, 3.0994415e-06)
