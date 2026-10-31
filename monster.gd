@@ -29,7 +29,11 @@ func _physics_process(delta: float) -> void:
 		var next := navi_agent.get_next_path_position()
 		velocity = global_position.direction_to(next) * SPEED
 
+	if velocity.length() != 0:
+		%AnimatedSprite2D.play("default")
 	move_and_slide()
+	
+	%LightRotator.rotation_degrees = rad_to_deg(get_angle_to(Player.instance.global_position))-180
 
 func _pick_target() -> void:
 	var player := Player.instance

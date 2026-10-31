@@ -3,10 +3,79 @@
 [ext_resource type="Script" uid="uid://chj6mssyaut64" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://buedxuqh1peyk" path="res://icon.svg" id="2_onrkg"]
 [ext_resource type="Texture2D" uid="uid://bojhnbfnhwaau" path="res://assets/FlashlightTexture.png" id="3_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://bcpo5em6fienk" path="res://assets/Player Grab/Player G 0.png" id="4_op7ga"]
+[ext_resource type="Texture2D" uid="uid://c0x38nlaimj3k" path="res://assets/Player Grab/Player G 1.png" id="5_q13i1"]
+[ext_resource type="Texture2D" uid="uid://deggyvynto75t" path="res://assets/Player Grab/Player G 2.png" id="6_pylmc"]
+[ext_resource type="Texture2D" uid="uid://dmt8bhg6bxjqw" path="res://assets/Player Grab/Player G 3.png" id="7_pbfsw"]
+[ext_resource type="Texture2D" uid="uid://yko2c6viepid" path="res://assets/Player Grab/Player G 4png.png" id="8_5tmop"]
+[ext_resource type="Texture2D" uid="uid://b0bbty6ot57tx" path="res://assets/Player Grab/Player G 5.png" id="9_7ahtn"]
+[ext_resource type="Texture2D" uid="uid://dqvtjnog1n36c" path="res://assets/Player Walk/Player W 1.png" id="10_7lmhl"]
+[ext_resource type="Texture2D" uid="uid://bidigj0ihk6l4" path="res://assets/Player Walk/Player W 2.png" id="11_dx0e4"]
+[ext_resource type="Texture2D" uid="uid://dmquqhgustl6f" path="res://assets/Player Walk/Player W 3.png" id="12_jm5j8"]
+[ext_resource type="Texture2D" uid="uid://ck74bgd3plmup" path="res://assets/Player Walk/Player W 4.png" id="13_7hik5"]
+[ext_resource type="Texture2D" uid="uid://cps3hh4384rgo" path="res://assets/Player Walk/Player W 5.png" id="14_qtqh7"]
+[ext_resource type="Texture2D" uid="uid://d2kbxpxpt1bkm" path="res://assets/Player Walk/Player W 6.png" id="15_2wuci"]
+[ext_resource type="Texture2D" uid="uid://qhub4fjfhg21" path="res://assets/Player Walk/Player W 7.png" id="16_iruf7"]
+[ext_resource type="Texture2D" uid="uid://dgrmv5178qima" path="res://assets/Player Walk/Player W 8.png" id="17_j5n4i"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_c4nxb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c4nxb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c4nxb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_op7ga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q13i1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pylmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pbfsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5tmop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7ahtn")
+}],
+"loop": 0,
+"name": &"grab",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_7lmhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dx0e4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jm5j8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7hik5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qtqh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2wuci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_iruf7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_j5n4i")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D" unique_id=1424454092]
 collision_layer = 32769
@@ -25,20 +94,27 @@ zoom = Vector2(2, 2)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1179870821]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=22475311]
-polygon = PackedVector2Array(0, 0, 100, -50, 100, 50)
-
 [node name="Node2D" type="Node2D" parent="Area2D" unique_id=330850516]
 position = Vector2(100, 0)
 rotation = 1.5707964
 
 [node name="PointLight2D" type="PointLight2D" parent="Area2D/Node2D" unique_id=1457794309]
+position = Vector2(4.371139e-06, 100)
+shadow_enabled = true
 texture = ExtResource("3_i3pqv")
+offset = Vector2(0, -101.5)
 texture_scale = 0.1
 
 [node name="SlowTimer" type="Timer" parent="." unique_id=2123527684]
 unique_name_in_owner = true
 one_shot = true
 
-[connection signal="draw" from="Area2D/CollisionPolygon2D" to="." method="_on_collision_polygon_2d_draw"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1015494241]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_c4nxb")
+animation = &"grab"
+frame = 5
+frame_progress = 1.0
+
 [connection signal="timeout" from="SlowTimer" to="." method="_on_slow_timer_timeout"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

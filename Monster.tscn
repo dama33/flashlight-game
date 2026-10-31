@@ -35,27 +35,23 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="SphereMesh" id="SphereMesh_vb3nq"]
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_1mv1j"]
 radius = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mnow7"]
 radius = 22.022715
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c4nxb"]
+polygon = PackedVector2Array(25, 14, 25, -16, 34, 0)
+
 [node name="Monster" type="CharacterBody2D" unique_id=1333855396]
 script = ExtResource("1_vb3nq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=959750076]
-position = Vector2(179, -139)
+unique_name_in_owner = true
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_c4nxb")
 frame_progress = 0.9305061
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1251972312]
-position = Vector2(-2.3841858e-07, 3.0994415e-06)
-scale = Vector2(20.022678, 20.000004)
-mesh = SubResource("SphereMesh_vb3nq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1989768960]
 shape = SubResource("CircleShape2D_1mv1j")
@@ -76,6 +72,13 @@ wait_time = 2.5
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1628896825]
 path_desired_distance = 8.0
 target_desired_distance = 16.0
+
+[node name="LightRotator" type="Node2D" parent="." unique_id=1395800593]
+unique_name_in_owner = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="LightRotator" unique_id=865516]
+position = Vector2(-20, 0)
+occluder = SubResource("OccluderPolygon2D_c4nxb")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
