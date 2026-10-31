@@ -40,3 +40,4 @@ unique_name_in_owner = true
 one_shot = true
 
 [connection signal="draw" from="Area2D/CollisionPolygon2D" to="." method="_on_collision_polygon_2d_draw"]
+[connection signal="timeout" from="SlowTimer" to="." method="_on_slow_timer_timeout"]

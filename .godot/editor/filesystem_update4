@@ -5,3 +5,5 @@ res://player.tscn
 res://ExplosionTrap.tscn
 res://explosion_trap.gd
 res://spike_trap.gd
+res://level.tscn
+res://SpikeTrap.tscn

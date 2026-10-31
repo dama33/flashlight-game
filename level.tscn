@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://buedxuqh1peyk" path="res://icon.svg" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://c57yc4fdslxy8" path="res://player.tscn" id="2_vonw3"]
 [ext_resource type="PackedScene" uid="uid://btpcnoueyqvua" path="res://wall.tscn" id="3_oi3di"]
+[ext_resource type="PackedScene" uid="uid://dofjhorhhlduj" path="res://SnareTrap.tscn" id="4_1ainy"]
+[ext_resource type="PackedScene" uid="uid://dju103cu6jk3h" path="res://ExplosionTrap.tscn" id="5_n6hdu"]
+[ext_resource type="PackedScene" uid="uid://cj05l0kvpgkcd" path="res://SpikeTrap.tscn" id="6_km5ld"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_w3ivq"]
 
@@ -23,3 +26,12 @@ texture = ExtResource("1_u52ul")
 [node name="Player" parent="." unique_id=1424454092 instance=ExtResource("2_vonw3")]
 
 [node name="StaticBody2D" parent="." unique_id=1120764025 instance=ExtResource("3_oi3di")]
+
+[node name="SnareTrap" parent="." unique_id=1409993363 instance=ExtResource("4_1ainy")]
+position = Vector2(197, 18)
+
+[node name="ExplosionTrap" parent="." unique_id=1845037286 instance=ExtResource("5_n6hdu")]
+position = Vector2(153, -65)
+
+[node name="SpikeTrap" parent="." unique_id=927160048 instance=ExtResource("6_km5ld")]
+position = Vector2(144, 26)

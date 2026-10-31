@@ -1,3 +1,26 @@
 [gd_scene format=3 uid="uid://cj05l0kvpgkcd"]
 
+[ext_resource type="Script" uid="uid://dfddekqda8jct" path="res://spike_trap.gd" id="1_704ca"]
+[ext_resource type="Texture2D" uid="uid://buedxuqh1peyk" path="res://icon.svg" id="2_32jj2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1mv1j"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_eeej4"]
+
 [node name="SpikeTrap" type="Node2D" unique_id=927160048]
+script = ExtResource("1_704ca")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=611325432]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=877191081]
+shape = SubResource("CircleShape2D_1mv1j")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1837908620]
+self_modulate = Color(1, 0, 0, 1)
+position = Vector2(2.3841858e-07, 0)
+rotation = 3.1415927
+scale = Vector2(7.548285, 8.248082)
+mesh = SubResource("QuadMesh_eeej4")
+texture = ExtResource("2_32jj2")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
