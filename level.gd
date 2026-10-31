@@ -5,13 +5,13 @@ extends Node2D
 const MONSTER_SCENE = preload("res://Monster.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	spawn_random_monster()
 	pass # Replace with function body.
 @onready var tile_map_layer: TileMapLayer = $TileMapLayer
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	spawn_random_monster()
 	pass
 func spawn_random_monster() -> void:
 	var map := navigation_region.get_navigation_map()
