@@ -1,6 +1,0 @@
-Timer
-CollisionShape2D
-Area2D
-CharacterBody2D
-CollisionPolygon2D
-MeshInstance2D
