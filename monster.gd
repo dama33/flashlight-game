@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 100.0
 const DAMAGE = 2
 const AGGRO_RANGE = 500.0
+var speed_scalar = 1.0
 @onready var AttackTimer:Timer = %AttackTimer
 # Max distance the guess can be off by
 @export var max_error := 64.0
@@ -14,6 +15,7 @@ const AGGRO_RANGE = 500.0
 # Seconds between new guesses
 @export var repath_interval := 0.8
 @onready var navi_agent: NavigationAgent2D = $NavigationAgent2D
+@onready var occulder: LightOccluder2D = $LightOccluder2D
 var _repath_timer := 0.0
 
 func _physics_process(delta: float) -> void:
@@ -23,7 +25,6 @@ func _physics_process(delta: float) -> void:
 		# perfectly regular
 		_repath_timer = repath_interval * randf_range(0.8, 1.2)
 		_pick_target()
-
 	if navi_agent.is_navigation_finished():
 		velocity = Vector2.ZERO
 	else:
