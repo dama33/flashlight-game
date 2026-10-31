@@ -1,15 +1,18 @@
 [gd_scene format=3 uid="uid://bfs1mxhgtokwq"]
 
+[ext_resource type="Script" uid="uid://chxms6a4hjuaj" path="res://level.gd" id="1_km5ld"]
 [ext_resource type="Texture2D" uid="uid://buedxuqh1peyk" path="res://icon.svg" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://c57yc4fdslxy8" path="res://player.tscn" id="2_vonw3"]
 [ext_resource type="PackedScene" uid="uid://btpcnoueyqvua" path="res://wall.tscn" id="3_oi3di"]
 [ext_resource type="PackedScene" uid="uid://dofjhorhhlduj" path="res://SnareTrap.tscn" id="4_1ainy"]
 [ext_resource type="PackedScene" uid="uid://dju103cu6jk3h" path="res://ExplosionTrap.tscn" id="5_n6hdu"]
 [ext_resource type="PackedScene" uid="uid://cj05l0kvpgkcd" path="res://SpikeTrap.tscn" id="6_km5ld"]
+[ext_resource type="PackedScene" uid="uid://dp0nu5giqyqrb" path="res://Monster.tscn" id="7_n6hdu"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_w3ivq"]
 
 [node name="Node2D" type="Node2D" unique_id=720652374]
+script = ExtResource("1_km5ld")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2037092492]
 color = Color(0.28688657, 0.28111443, 0.2654864, 1)
@@ -35,3 +38,6 @@ position = Vector2(153, -65)
 
 [node name="SpikeTrap" parent="." unique_id=927160048 instance=ExtResource("6_km5ld")]
 position = Vector2(144, 26)
+
+[node name="Monster" parent="." unique_id=1333855396 instance=ExtResource("7_n6hdu")]
+position = Vector2(98, 107)

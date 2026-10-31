@@ -31,5 +31,7 @@ func _on_slow_timer_timeout() -> void:
 
 func take_damage(damage:int):
 	current_health-=damage
+	print("Took damage")
 	if current_health <= 0:
+		print("Died!")
 		pass #die

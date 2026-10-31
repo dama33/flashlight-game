@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
+func _on_area_2d_body_entered(body: Node2D) -> void:
 	# Insta kill the player
 	print("Explosion trap trigggered!")
 	queue_free()
