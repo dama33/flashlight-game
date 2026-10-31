@@ -20,16 +20,14 @@ func _physics_process(delta: float) -> void:
 	if _repath_timer <= 0.0:
 		# Jitter the timing too, so it isn't
 		# perfectly regular
-		_repath_timer = repath_interval \
-			* randf_range(0.8, 1.2)
+		_repath_timer = repath_interval * randf_range(0.8, 1.2)
 		_pick_target()
 
 	if navi_agent.is_navigation_finished():
 		velocity = Vector2.ZERO
 	else:
 		var next := navi_agent.get_next_path_position()
-		velocity = global_position \
-			.direction_to(next) * SPEED
+		velocity = global_position.direction_to(next) * SPEED
 
 	move_and_slide()
 
@@ -39,21 +37,18 @@ func _pick_target() -> void:
 		return
 
 	# Sloppy when far, accurate when close
-	var dist := global_position \
-		.distance_to(player.global_position)
+	var dist := global_position.distance_to(player.global_position)
 	var t := clampf(dist / error_falloff, 0.0, 1.0)
 	var err := lerpf(min_error, max_error, t)
 
 	# Random point in a circle around the player
-	var offset := Vector2.from_angle(randf() * TAU) \
-		* randf() * err
+	var offset := Vector2.from_angle(randf() * TAU) * randf() * err
 	var guess := player.global_position + offset
 
 	# Snap the guess onto the navmesh so it
 	# never targets a point inside a wall
 	var map := navi_agent.get_navigation_map()
-	navi_agent.target_position = NavigationServer2D \
-		.map_get_closest_point(map, guess)
+	navi_agent.target_position = NavigationServer2D.map_get_closest_point(map, guess)
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	AttackTimer.stop()
