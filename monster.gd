@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 100.0
 const DAMAGE = 2
+const AGGRO_RANGE = 500.0
 @onready var AttackTimer:Timer = %AttackTimer
 # Max distance the guess can be off by
 @export var max_error := 64.0
@@ -35,7 +36,9 @@ func _pick_target() -> void:
 	var player := Player.instance
 	if player == null:
 		return
-
+	var our_pos = self.position
+	if our_pos.distance_to(player.position) > AGGRO_RANGE:
+		return
 	# Sloppy when far, accurate when close
 	var dist := global_position.distance_to(player.global_position)
 	var t := clampf(dist / error_falloff, 0.0, 1.0)
