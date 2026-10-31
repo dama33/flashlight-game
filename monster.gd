@@ -68,5 +68,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_attack_timer_timeout() -> void:
-	Player.instance.take_damage(2)
+	Player.instance.take_damage(DAMAGE)
 	pass # Replace with function body.
