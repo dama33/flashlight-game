@@ -10,8 +10,13 @@ func _input(event: InputEvent) -> void:
 	
 func _process(delta: float) -> void:
 	velocity = Input.get_vector("left","right","up","down") * delta * SPEED
+	look_at(get_global_mouse_position())
 	
 func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	
+
+
+func _on_collision_polygon_2d_draw() -> void:
+	pass

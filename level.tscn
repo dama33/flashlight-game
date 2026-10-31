@@ -2,10 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://buedxuqh1peyk" path="res://icon.svg" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://c57yc4fdslxy8" path="res://player.tscn" id="2_vonw3"]
+[ext_resource type="PackedScene" uid="uid://btpcnoueyqvua" path="res://wall.tscn" id="3_oi3di"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_w3ivq"]
 
 [node name="Node2D" type="Node2D" unique_id=720652374]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2037092492]
+color = Color(0.28688657, 0.28111443, 0.2654864, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=433481349]
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=587828682]
 position = Vector2(0, -39.499985)
@@ -15,3 +21,5 @@ mesh = SubResource("QuadMesh_w3ivq")
 texture = ExtResource("1_u52ul")
 
 [node name="Player" parent="." unique_id=1424454092 instance=ExtResource("2_vonw3")]
+
+[node name="StaticBody2D" parent="." unique_id=1120764025 instance=ExtResource("3_oi3di")]
