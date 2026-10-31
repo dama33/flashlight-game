@@ -1,24 +1,32 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1793475176
+::res://::1793476451
 icon.svg::CompressedTexture2D::3798679367245361090::1793469265::1793469681::1::::<><><>0<>0<>c446fe42ed08b750a5cc5aedb933785c<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-level.tscn::PackedScene::2776124991944375492::1793475176::0::1::::<><><>0<>0<><>::uid://chxms6a4hjuaj::::res://level.gd<>uid://buedxuqh1peyk::::res://icon.svg<>uid://c57yc4fdslxy8::::res://player.tscn<>uid://btpcnoueyqvua::::res://wall.tscn<>uid://dofjhorhhlduj::::res://SnareTrap.tscn<>uid://dju103cu6jk3h::::res://ExplosionTrap.tscn<>uid://cj05l0kvpgkcd::::res://SpikeTrap.tscn<>uid://dp0nu5giqyqrb::::res://Monster.tscn
-player.gd::GDScript::5284647303259627303::1793472772::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
-player.tscn::PackedScene::6946029075133287749::1793473161::0::1::::<><><>0<>0<><>::uid://chj6mssyaut64::::res://player.gd<>uid://buedxuqh1peyk::::res://icon.svg<>uid://bojhnbfnhwaau::::res://assets/FlashlightTexture.png
+level.tscn::PackedScene::2776124991944375492::1793476451::0::1::::<><><>0<>0<><>::uid://chxms6a4hjuaj::::res://level.gd<>uid://buedxuqh1peyk::::res://icon.svg<>uid://c57yc4fdslxy8::::res://player.tscn<>uid://btpcnoueyqvua::::res://wall.tscn<>uid://dofjhorhhlduj::::res://SnareTrap.tscn<>uid://dju103cu6jk3h::::res://ExplosionTrap.tscn<>uid://cj05l0kvpgkcd::::res://SpikeTrap.tscn<>uid://dp0nu5giqyqrb::::res://Monster.tscn
+player.gd::GDScript::5284647303259627303::1793476239::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene::6946029075133287749::1793476239::0::1::::<><><>0<>0<><>::uid://chj6mssyaut64::::res://player.gd<>uid://buedxuqh1peyk::::res://icon.svg<>uid://bojhnbfnhwaau::::res://assets/FlashlightTexture.png
 README.md::TextFile::-1::1793469265::0::1::::<><><>0<>0<><>::
 ExplosionTrap.tscn::PackedScene::7833873960256254623::1793473798::0::1::::<><><>0<>0<><>::uid://bvbvwaveydb4v::::res://explosion_trap.gd
 explosion_trap.gd::GDScript::3863765154814670923::1793473798::0::1::::<>Node2D<><>0<>0<><>::
-Monster.tscn::PackedScene::8264530771640503235::1793474231::0::1::::<><><>0<>0<><>::uid://d3ujtaijxouxv::::res://monster.gd
-monster.gd::GDScript::9166417623843160691::1793474072::0::1::::<>CharacterBody2D<><>0<>0<><>::
-level.gd::GDScript::5312406338950502321::1793475171::0::1::::<>Node2D<><>0<>0<><>::
+Monster.tscn::PackedScene::8264530771640503235::1793476374::0::1::::<><><>0<>0<><>::uid://d3ujtaijxouxv::::res://monster.gd<>uid://bimqqcdpy7ses::::res://monster_attack_range_area.gd
+monster.gd::GDScript::9166417623843160691::1793476104::0::1::::<>CharacterBody2D<><>0<>0<><>::
+level.gd::GDScript::5312406338950502321::1793475268::0::1::::<>Node2D<><>0<>0<><>::
+monster_attack_range_area.gd::GDScript::2973704120828814850::1793475551::0::1::::<>Area2D<><>0<>0<><>::
 spike_trap.gd::GDScript::7516589246773549283::1793472481::0::1::::<>Node2D<><>0<>0<><>::
 SpikeTrap.tscn::PackedScene::5457992887002169903::1793472431::0::1::::<><><>0<>0<><>::uid://dfddekqda8jct::::res://spike_trap.gd<>uid://buedxuqh1peyk::::res://icon.svg
-snare_trap.gd::GDScript::3877760015605720889::1793473116::0::1::::<>Node2D<><>0<>0<><>::
+snare_trap.gd::GDScript::3877760015605720889::1793476451::0::1::::<>Node2D<><>0<>0<><>::
 SnareTrap.tscn::PackedScene::8152787466190703781::1793473147::0::1::::<><><>0<>0<><>::uid://bvioe15kbex02::::res://snare_trap.gd
 wall.tscn::PackedScene::3751119794870367484::1793469265::0::1::::<><><>0<>0<><>::
-::res://assets/::1793475201
+::res://assets/::1793476451
 FlashlightTexture.png::CompressedTexture2D::3388092189530473108::1793469265::1793469682::1::::<><><>0<>0<>f47013501e2c9571d876cb4debac792f<>res://.godot/imported/FlashlightTexture.png-4f7aa065582004f42bcbe2b0c7ab4c1f.ctex::
-Place holder wall.png::CompressedTexture2D::7263391832129886532::1793473576::1793473613::1::::<><><>0<>0<>f1fb44a6e26e357c060374ae18852f45<>res://.godot/imported/Place holder wall.png-954e072d353488bdfad16526ec426080.ctex::
-::res://assets/UI/::1793475201
+Place holder wall.png::CompressedTexture2D::7263391832129886532::1793476451::1793476456::1::::<><><>0<>0<>f1fb44a6e26e357c060374ae18852f45<>res://.godot/imported/Place holder wall.png-954e072d353488bdfad16526ec426080.ctex::
+::res://assets/Enemy Sprite/::1793476451
+Enemy (1).png::CompressedTexture2D::2295558398359726553::1793476451::1793476457::1::::<><><>0<>0<>d9e72bf5c913a010a1582c06401a6eca<>res://.godot/imported/Enemy (1).png-952aeafe6970742b9a9a938ca6229421.ctex::
+Enemy (2).png::CompressedTexture2D::4531595444841967777::1793476451::1793476457::1::::<><><>0<>0<>c77ed71b47f1546d927c4319b15cdfe7<>res://.godot/imported/Enemy (2).png-ad5b7d13d5e19091ae8491c07ff95604.ctex::
+Enemy (3).png::CompressedTexture2D::3767102317895780747::1793476451::1793476457::1::::<><><>0<>0<>da46b589c73b934bab235ae6eabd0dce<>res://.godot/imported/Enemy (3).png-01b9152f7f3141b09b8d5f70b2bfa579.ctex::
+Enemy (4).png::CompressedTexture2D::3095439420837614351::1793476451::1793476457::1::::<><><>0<>0<>f96dd4398f50bdf8f341a6646939b283<>res://.godot/imported/Enemy (4).png-1efecc3657d9f3e4b91846819667802d.ctex::
+Enemy (5).png::CompressedTexture2D::537156093512838910::1793476451::1793476457::1::::<><><>0<>0<>65d3c526a68840ad158689c6f317ad94<>res://.godot/imported/Enemy (5).png-0b6b9d0c32a42461f0bf4f159596aeea.ctex::
+Enemy (6).png::CompressedTexture2D::1187029728473040523::1793476451::1793476457::1::::<><><>0<>0<>ab623fc44149266d9614b506730966e7<>res://.godot/imported/Enemy (6).png-4947f6f4685277c63d83941c5ab0008c.ctex::
+::res://assets/UI/::1793475209
 alert-1.png::CompressedTexture2D::6879857457939320759::1793475201::1793475209::1::::<><><>0<>0<>2039863e3aca5430c2bcd02c043ea362<>res://.godot/imported/alert-1.png-4f7f5c9ed50240eaf48eb294ac9d1191.ctex::
 alert-2.png::CompressedTexture2D::1939709635027759984::1793475201::1793475209::1::::<><><>0<>0<>51818edef280f374f378352aa0ed75c1<>res://.godot/imported/alert-2.png-4ca15e8e78d6a57c7c584e3b46bd62ea.ctex::
 alert-3.png::CompressedTexture2D::6892119006215340862::1793475201::1793475209::1::::<><><>0<>0<>d293cbb75182f2b3b4414547c6813494<>res://.godot/imported/alert-3.png-a3885160dec0364d5a272c342522d206.ctex::
