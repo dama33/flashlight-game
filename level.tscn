@@ -64,6 +64,9 @@ position = Vector2(153, -65)
 [node name="SpikeTrap" parent="." unique_id=927160048 instance=ExtResource("6_km5ld")]
 position = Vector2(144, 26)
 
+[node name="Monster" parent="." unique_id=1333855396 instance=ExtResource("7_n6hdu")]
+position = Vector2(98, 107)
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=881527638]
 navigation_polygon = SubResource("NavigationPolygon_n6hdu")
 
