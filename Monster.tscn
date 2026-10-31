@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dp0nu5giqyqrb"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1mv1j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1mv1j"]
+radius = 37.576588
+
+[node name="Monster" type="CharacterBody2D" unique_id=1333855396]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1251972312]
+position = Vector2(9.536743e-07, 1.0000038)
+scale = Vector2(45.999996, 26.000002)
+mesh = SubResource("CapsuleMesh_1mv1j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1989768960]
+shape = SubResource("CircleShape2D_1mv1j")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1910032619]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1246243974]

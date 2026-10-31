@@ -1,4 +1,6 @@
-MeshInstance2D
-CollisionShape2D
+CharacterBody2D
+CollisionPolygon2D
 Area2D
+CollisionShape2D
+MeshInstance2D
 Timer
