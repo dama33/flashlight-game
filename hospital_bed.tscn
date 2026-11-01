@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://drxkjrpoynuuf"]
+
+[ext_resource type="Texture2D" uid="uid://ccq5fmvvp6baa" path="res://assets/Random Objects and Textures 1/Hospital Bed.png" id="1_tnxx5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4nxb"]
+size = Vector2(56, 126)
+
+[node name="HospitalBed" type="StaticBody2D" unique_id=27480825]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1993663708]
+texture = ExtResource("1_tnxx5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=623373344]
+position = Vector2(4, 1)
+shape = SubResource("RectangleShape2D_c4nxb")

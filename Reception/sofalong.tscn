@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://vjdygvgmrmjv"]
+
+[ext_resource type="Texture2D" uid="uid://yb22wwofgjsc" path="res://assets/Random Objects and Textures 1/Sofa Long.png" id="1_l27xk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4nxb"]
+size = Vector2(127, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5wgg"]
+size = Vector2(76, 70)
+
+[node name="SofaLong" type="StaticBody2D" unique_id=751488909]
+
+[node name="SofaLong" type="Sprite2D" parent="." unique_id=1751583713]
+texture = ExtResource("1_l27xk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=563331846]
+position = Vector2(0.5, -20)
+shape = SubResource("RectangleShape2D_c4nxb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1495684741]
+position = Vector2(0, 25)
+shape = SubResource("RectangleShape2D_g5wgg")

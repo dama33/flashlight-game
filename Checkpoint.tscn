@@ -1,19 +1,90 @@
 [gd_scene format=3 uid="uid://cd4rl5hx0g4ai"]
 
 [ext_resource type="Script" uid="uid://bq376lj00d1ft" path="res://checkpoint.gd" id="1_ir6d7"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_qkbnx"]
+[ext_resource type="Texture2D" uid="uid://c6vlqhqx52ccr" path="res://assets/Dead/Dead 1.png" id="2_yt2a0"]
+[ext_resource type="Texture2D" uid="uid://dmmdgfdios6bi" path="res://assets/UI/button-1.png" id="3_ui_btn1"]
+[ext_resource type="Texture2D" uid="uid://cu1wp78p4tsm" path="res://assets/UI/button-3.png" id="4_ui_btn3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1mv1j"]
-radius = 163.00307
+radius = 57.31492
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_71pa8"]
+light_mode = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_71pa8"]
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btn_normal"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+texture = ExtResource("3_ui_btn1")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btn_hover"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+texture = ExtResource("4_ui_btn3")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btn_disabled"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+texture = ExtResource("3_ui_btn1")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+modulate_color = Color(0.6, 0.6, 0.6, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_focus"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_panel"]
+content_margin_left = 16.0
+content_margin_top = 12.0
+content_margin_right = 20.0
+content_margin_bottom = 16.0
+texture = ExtResource("3_ui_btn1")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="Theme" id="Theme_checkpoint_ui"]
+Button/colors/font_color = Color(0.101961, 0.101961, 0.133333, 1)
+Button/colors/font_disabled_color = Color(0.101961, 0.101961, 0.133333, 0.5)
+Button/colors/font_focus_color = Color(0.101961, 0.101961, 0.133333, 1)
+Button/colors/font_hover_color = Color(0.101961, 0.101961, 0.133333, 1)
+Button/colors/font_hover_pressed_color = Color(0.101961, 0.101961, 0.133333, 1)
+Button/colors/font_pressed_color = Color(0.101961, 0.101961, 0.133333, 1)
+Button/styles/disabled = SubResource("StyleBoxTexture_btn_disabled")
+Button/styles/focus = SubResource("StyleBoxEmpty_focus")
+Button/styles/hover = SubResource("StyleBoxTexture_btn_hover")
+Button/styles/normal = SubResource("StyleBoxTexture_btn_normal")
+Button/styles/pressed = SubResource("StyleBoxTexture_btn_hover")
+Label/colors/font_color = Color(0.101961, 0.101961, 0.133333, 1)
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_panel")
 
 [node name="Checkpoint" type="Node2D" unique_id=243302455]
 script = ExtResource("1_ir6d7")
+sprite = ExtResource("2_yt2a0")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1523790519]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1745732139]
+unique_name_in_owner = true
 position = Vector2(-5.9604645e-08, 5.9604645e-07)
-scale = Vector2(4.004536, 4.000001)
-mesh = SubResource("SphereMesh_qkbnx")
+scale = Vector2(0.8, 0.8)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=852616933]
 collision_mask = 32768
@@ -24,9 +95,83 @@ shape = SubResource("CircleShape2D_1mv1j")
 [node name="Prompt" type="Label" parent="." unique_id=272656344]
 unique_name_in_owner = true
 visible = false
-offset_right = 40.0
-offset_bottom = 23.0
-text = "E"
+material = SubResource("CanvasItemMaterial_71pa8")
+offset_left = -100.0
+offset_top = -78.0
+offset_right = 109.0
+offset_bottom = -55.0
+text = "Press E"
+label_settings = SubResource("LabelSettings_71pa8")
 horizontal_alignment = 1
 
+[node name="UI" type="CanvasLayer" parent="." unique_id=126367329]
+layer = 10
+
+[node name="Menu" type="VBoxContainer" parent="UI" unique_id=1108411487]
+unique_name_in_owner = true
+visible = false
+texture_filter = 1
+offset_right = 130.0
+offset_bottom = 80.0
+theme = SubResource("Theme_checkpoint_ui")
+theme_override_constants/separation = 4
+
+[node name="SplitButton" type="Button" parent="UI/Menu" unique_id=341374706]
+layout_mode = 2
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+focus_mode = 0
+text = "1  Split"
+alignment = 0
+
+[node name="NoteButton" type="Button" parent="UI/Menu" unique_id=1740627847]
+layout_mode = 2
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+focus_mode = 0
+text = "2  Note"
+alignment = 0
+
+[node name="NoteWindow" type="PanelContainer" parent="UI" unique_id=943611813]
+unique_name_in_owner = true
+visible = false
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -60.0
+offset_right = 170.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_checkpoint_ui")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/NoteWindow" unique_id=402484307]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="NoteTitle" type="Label" parent="UI/NoteWindow/VBoxContainer" unique_id=1568587352]
+layout_mode = 2
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 20
+text = "Note title"
+
+[node name="NoteBody" type="Label" parent="UI/NoteWindow/VBoxContainer" unique_id=192917777]
+layout_mode = 2
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+autowrap_mode = 3
+
+[node name="Hint" type="Label" parent="UI/NoteWindow/VBoxContainer" unique_id=1393206661]
+layout_mode = 2
+modulate = Color(1, 1, 1, 0.6)
+theme_override_font_sizes/font_size = 12
+text = "[E] / [Esc]  close"
+horizontal_alignment = 2
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

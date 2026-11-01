@@ -7,6 +7,7 @@ static var instance:Player
 @onready var SlowTimer:Timer = %SlowTimer
 
 var checkpoints:Array[Checkpoint]
+var current_checkpoint: Checkpoint
 
 var state:PlayerState = PlayerState.IDLE
 
@@ -26,6 +27,12 @@ func _ready():
 
 func _process(delta: float) -> void:	
 	look_at(get_global_mouse_position())
+	# The checkpoint opens its Split / Note menu;
+	# saving now happens on Split, not here.
+	if Input.is_action_just_pressed("interact") \
+			and is_instance_valid(current_checkpoint) \
+			and state != PlayerState.DEAD:
+		current_checkpoint.interact()
 	
 func _physics_process(delta: float) -> void:
 	if state != PlayerState.DEAD:
@@ -63,7 +70,10 @@ func take_damage(damage:int):
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	print("state over")
-	state = PlayerState.IDLE
+	# Only the one-shot "grab" anim ends here. Never
+	# leave DEAD: that revived the player at <= 0 HP.
+	if state == PlayerState.GRABBING:
+		state = PlayerState.IDLE
 
 
 func _on_respawn_timer_timeout() -> void:

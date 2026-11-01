@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c7rve6traer23"]
+
+[ext_resource type="Texture2D" uid="uid://cwlhi4bb3ajwk" path="res://assets/Random Objects and Textures 1/Curve Bench.png" id="1_slflb"]
+
+[node name="CurvedBench" type="StaticBody2D" unique_id=519096169]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=797931391]
+texture = ExtResource("1_slflb")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1941793447]
+polygon = PackedVector2Array(8, -2, 27, 7, 45, 24, 62, 14, 44, -4, 15, -17, -13, -17, -42, -6, -62, 12, -45, 24, -30, 11, -14, 3, -5, 0)

@@ -2,9 +2,9 @@ class_name Monster
 extends CharacterBody2D
 
 const WALL_MASK:int = 1
-const SPEED:float = 100.0
+const SPEED:float = 300.0
 const DAMAGE:int = 2
-const AGGRO_RANGE:float = 500.0
+const AGGRO_RANGE:float = 300.0
 var speed_scalar:float = 1.0
 var is_in_light:bool = false
 @onready var AttackTimer:Timer = %AttackTimer
@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 	if navi_agent.is_navigation_finished():
 		velocity = Vector2.ZERO
 	else:
-		speed_scalar = 0.6 if _is_lit() else 1.0
+		speed_scalar = 0.3 if _is_lit() else 1.0
 		var next := navi_agent.get_next_path_position()
 		velocity = global_position.direction_to(next) * SPEED * speed_scalar
 
