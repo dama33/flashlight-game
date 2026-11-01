@@ -1,12 +1,26 @@
+class_name Level
 extends Node2D
 
 @export var monster_scene: PackedScene
 @onready var navigation_region: NavigationRegion2D = $NavigationRegion2D
 const MONSTER_SCENE = preload("res://Monster.tscn")
+
+static var instance:Level
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	instance = self
 	spawn_random_monster()
 	pass # Replace with function body.
+
+func spawn_monster_at_player_position():
+	var map:RID = navigation_region.get_navigation_map()
+	var layers:int = navigation_region.navigation_layers
+	
+	var enemy:Node = monster_scene.instantiate()
+	enemy.global_position = Player.instance.global_position
+	add_child(enemy)
+
 
 func spawn_random_monster() -> void:
 	var map:RID = navigation_region.get_navigation_map()

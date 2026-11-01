@@ -22,6 +22,7 @@ func interact():
 	already_found = true
 
 func respawn():
+	Level.instance.spawn_monster_at_player_position()
 	Player.instance.global_position = global_position
 	queue_free()
 

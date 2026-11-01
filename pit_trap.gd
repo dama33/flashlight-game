@@ -15,5 +15,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		# Insta kill the player
 		print("Pit trap trigggered!")
-	if body is Monster: 
-		print("haha monster got you")
+		Player.instance.take_damage(Player.max_health)
+		%AudioStreamPlayer2D.play()
+		Player.instance.fall_in_pit()

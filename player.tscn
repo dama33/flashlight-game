@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c57yc4fdslxy8"]
 
 [ext_resource type="Script" uid="uid://chj6mssyaut64" path="res://player.gd" id="1_4flbx"]
-[ext_resource type="Texture2D" uid="uid://buedxuqh1peyk" path="res://icon.svg" id="2_onrkg"]
 [ext_resource type="Texture2D" uid="uid://bojhnbfnhwaau" path="res://assets/FlashlightTexture.png" id="3_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://bcpo5em6fienk" path="res://assets/Player Grab/Player G 0.png" id="4_op7ga"]
 [ext_resource type="Texture2D" uid="uid://c0x38nlaimj3k" path="res://assets/Player Grab/Player G 1.png" id="5_q13i1"]
@@ -17,8 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://d2kbxpxpt1bkm" path="res://assets/Player Walk/Player W 6.png" id="15_2wuci"]
 [ext_resource type="Texture2D" uid="uid://qhub4fjfhg21" path="res://assets/Player Walk/Player W 7.png" id="16_iruf7"]
 [ext_resource type="Texture2D" uid="uid://dgrmv5178qima" path="res://assets/Player Walk/Player W 8.png" id="17_j5n4i"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_c4nxb"]
+[ext_resource type="Texture2D" uid="uid://ca4xp7frglbub" path="res://assets/Dead/Dead 2.png" id="17_op7ga"]
+[ext_resource type="Texture2D" uid="uid://erm6qulbyhty" path="res://assets/Dead/Dead 4 .png" id="18_q13i1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c4nxb"]
 radius = 19.0
@@ -84,11 +83,6 @@ collision_layer = 32773
 collision_mask = 5
 script = ExtResource("1_4flbx")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=765223380]
-scale = Vector2(20, 20)
-mesh = SubResource("QuadMesh_c4nxb")
-texture = ExtResource("2_onrkg")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=63531711]
 shape = SubResource("CircleShape2D_c4nxb")
 
@@ -126,6 +120,18 @@ animation = &"grab"
 unique_name_in_owner = true
 wait_time = 3.0
 one_shot = true
+
+[node name="FallingSprite" type="Sprite2D" parent="." unique_id=1463494025]
+unique_name_in_owner = true
+visible = false
+texture = ExtResource("17_op7ga")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1718302463]
+
+[node name="ExplodingSprite" type="Sprite2D" parent="." unique_id=1036479652]
+unique_name_in_owner = true
+visible = false
+texture = ExtResource("18_q13i1")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

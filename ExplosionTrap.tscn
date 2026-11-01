@@ -2,13 +2,59 @@
 
 [ext_resource type="Script" uid="uid://bvbvwaveydb4v" path="res://explosion_trap.gd" id="1_mjnbr"]
 [ext_resource type="Texture2D" uid="uid://dns4x2dbo7pkj" path="res://assets/Bomb.png" id="2_lqgxi"]
+[ext_resource type="AudioStream" uid="uid://d1nxhlpsprupu" path="res://assets/Sound Effects/Explosion.mp3" id="3_gteh6"]
+[ext_resource type="Texture2D" uid="uid://8uw7r6g35ivj" path="res://assets/Explosion Animation/Circle_explosion1.png" id="4_4t7ks"]
+[ext_resource type="Texture2D" uid="uid://dxsdmgg1olahr" path="res://assets/Explosion Animation/Circle_explosion2.png" id="5_nnxe1"]
+[ext_resource type="Texture2D" uid="uid://b57wluppevwbk" path="res://assets/Explosion Animation/Circle_explosion3.png" id="6_60p4w"]
+[ext_resource type="Texture2D" uid="uid://cnqk3jmjoysvq" path="res://assets/Explosion Animation/Circle_explosion4.png" id="7_a6rbq"]
+[ext_resource type="Texture2D" uid="uid://bo0jc4a0f0sf0" path="res://assets/Explosion Animation/Circle_explosion5.png" id="8_124b5"]
+[ext_resource type="Texture2D" uid="uid://dd2fqv01fovrb" path="res://assets/Explosion Animation/Circle_explosion6.png" id="9_8mf08"]
+[ext_resource type="Texture2D" uid="uid://in2hft8tqdg4" path="res://assets/Explosion Animation/Circle_explosion7.png" id="10_4sni7"]
+[ext_resource type="Texture2D" uid="uid://ccbf7s77dmv61" path="res://assets/Explosion Animation/Circle_explosion8.png" id="11_cf5xj"]
+[ext_resource type="Texture2D" uid="uid://bsxrgt33rdhkm" path="res://assets/Explosion Animation/Circle_explosion9.png" id="12_3ve1i"]
+[ext_resource type="Texture2D" uid="uid://np5hal6pd4mg" path="res://assets/Explosion Animation/Circle_explosion10.png" id="13_xqd7n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1mv1j"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_1mv1j"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_c4nxb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_4t7ks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nnxe1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_60p4w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_a6rbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_124b5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8mf08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4sni7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cf5xj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3ve1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_xqd7n")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 15.0
+}]
 
 [node name="ExplosionTrap" type="Node2D" unique_id=1845037286]
-scale = Vector2(3, 3)
 script = ExtResource("1_mjnbr")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=975949786]
@@ -18,11 +64,22 @@ collision_mask = 32768
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1779424287]
 shape = SubResource("CircleShape2D_1mv1j")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=576139771]
-rotation = 3.1415927
-scale = Vector2(15, 15)
-mesh = SubResource("QuadMesh_1mv1j")
+[node name="Sprite" type="Sprite2D" parent="." unique_id=69754688]
+unique_name_in_owner = true
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_lqgxi")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1669483481]
+unique_name_in_owner = true
+stream = ExtResource("3_gteh6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=513705309]
+unique_name_in_owner = true
+visible = false
+sprite_frames = SubResource("SpriteFrames_c4nxb")
+frame = 9
+frame_progress = 1.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

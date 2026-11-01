@@ -15,7 +15,8 @@ enum PlayerState {
 	WALKING,
 	IDLE,
 	GRABBING,
-	DEAD
+	DEAD,
+	FALLING
 }
 
 const max_health = 5
@@ -26,14 +27,16 @@ func _ready():
 	pass;
 
 func _process(delta: float) -> void:	
-	if state != PlayerState.DEAD:
+	if state != PlayerState.DEAD && state != PlayerState.FALLING:
 		look_at(get_global_mouse_position())
 		if Input.is_action_just_pressed("interact") and current_checkpoint != null and !current_checkpoint.already_found:
 			checkpoints.append(current_checkpoint)
 			current_checkpoint.interact()
+	elif state == PlayerState.FALLING:
+		scale = lerp(scale, Vector2(0,0),.03)
 	
 func _physics_process(delta: float) -> void:
-	if state != PlayerState.DEAD:
+	if state != PlayerState.DEAD && state != PlayerState.FALLING:
 		velocity = Input.get_vector("left","right","up","down").normalized() * delta * SPEED * speed_scalar
 		if Input.is_action_just_pressed("spacebar"):
 			print("in here")
@@ -61,6 +64,7 @@ func take_damage(damage:int):
 			state = PlayerState.DEAD
 			if checkpoints.size() > 0:		
 				print("Died!")
+				explode()
 				%RespawnTimer.start()
 			else:
 				print("super dead")
@@ -74,18 +78,29 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func _on_respawn_timer_timeout() -> void:
 	current_health = max_health
 	checkpoints.pop_back().respawn()
+	%FallingSprite.visible = false
+	%ExplodingSprite.visible = false
+	scale = Vector2(.8,.8)
+	%AnimatedSprite2D.visible = true
 	state = PlayerState.IDLE
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Monster:
 		body.is_in_light = true
-		
-		
-	pass # Replace with function body.
-
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body is Monster:
 		body.is_in_light = false
 	pass # Replace with function body.
+
+func fall_in_pit():
+	state = PlayerState.FALLING
+	
+	%ExplodingSprite.visible = false
+	%FallingSprite.visible = true
+	%AnimatedSprite2D.visible = false
+	
+func explode():
+	%ExplodingSprite.visible = true
+	%AnimatedSprite2D.visible = false
