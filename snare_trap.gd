@@ -11,7 +11,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	%SnapSound.play()
 	Player.instance.SlowTimer.start()
 	Player.instance.speed_scalar = .35
-	Player.instance.take_damage(1)
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	# Let the snap ring out before removing the trap

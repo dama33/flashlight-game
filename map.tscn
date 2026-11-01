@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dp0nu5giqyqrb" path="res://Monster.tscn" id="2_71pa8"]
 [ext_resource type="Texture2D" uid="uid://dbqpacvvk0my3" path="res://assets/Place holder wall.png" id="2_p5pve"]
 [ext_resource type="PackedScene" uid="uid://c57yc4fdslxy8" path="res://player.tscn" id="3_urblq"]
+[ext_resource type="PackedScene" uid="uid://dhifdpnm4gbtm" path="res://Intro.tscn" id="3_yy28u"]
 [ext_resource type="Texture2D" uid="uid://bh0l4sdr6ipv5" path="res://assets/Map/Tileset.png" id="4_tiles"]
 [ext_resource type="PackedScene" uid="uid://cd4rl5hx0g4ai" path="res://Checkpoint.tscn" id="7_71pa8"]
 [ext_resource type="PackedScene" uid="uid://dofjhorhhlduj" path="res://SnareTrap.tscn" id="8_05x41"]
@@ -241,6 +242,8 @@ sources/1 = SubResource("TileSetAtlasSource_dungeon")
 [node name="Map" type="Node2D" unique_id=1967431279]
 script = ExtResource("1_iw27f")
 monster_scene = ExtResource("2_71pa8")
+
+[node name="Intro" parent="." unique_id=1605190765 instance=ExtResource("3_yy28u")]
 
 [node name="Sketch" type="Sprite2D" parent="." unique_id=1674234442]
 visible = false
