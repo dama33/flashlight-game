@@ -7,12 +7,7 @@ const MONSTER_SCENE = preload("res://Monster.tscn")
 func _ready() -> void:
 	spawn_random_monster()
 	pass # Replace with function body.
-@onready var tile_map_layer: TileMapLayer = $TileMapLayer
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 func spawn_random_monster() -> void:
 	var map:RID = navigation_region.get_navigation_map()
 	var layers:int = navigation_region.navigation_layers

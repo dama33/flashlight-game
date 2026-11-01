@@ -7,6 +7,7 @@ static var instance:Player
 @onready var SlowTimer:Timer = %SlowTimer
 
 var checkpoints:Array[Checkpoint]
+var current_checkpoint: Checkpoint
 
 var state:PlayerState = PlayerState.IDLE
 
@@ -26,6 +27,9 @@ func _ready():
 
 func _process(delta: float) -> void:	
 	look_at(get_global_mouse_position())
+	if Input.is_action_just_pressed("interact") and current_checkpoint != null and !current_checkpoint.already_found:
+		checkpoints.append(current_checkpoint)
+		current_checkpoint.interact()
 	
 func _physics_process(delta: float) -> void:
 	if state != PlayerState.DEAD:

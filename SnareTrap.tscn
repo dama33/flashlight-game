@@ -1,11 +1,29 @@
 [gd_scene format=3 uid="uid://dofjhorhhlduj"]
 
 [ext_resource type="Script" uid="uid://bvioe15kbex02" path="res://snare_trap.gd" id="1_q7ubi"]
+[ext_resource type="Texture2D" uid="uid://djtxdcahlyra3" path="res://assets/Bear and Hole/Bear 1.png" id="2_7tbd7"]
+[ext_resource type="Texture2D" uid="uid://cv68k5qesj7vc" path="res://assets/Bear and Hole/Bear 2.png" id="3_qjxbl"]
+[ext_resource type="Texture2D" uid="uid://cr3h524t43q34" path="res://assets/Bear and Hole/Bear 3.png" id="4_bgy7h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1mv1j"]
 radius = 12.0
 
-[sub_resource type="QuadMesh" id="QuadMesh_1mv1j"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_c4nxb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7tbd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qjxbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bgy7h")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="SnareTrap" type="Node2D" unique_id=1409993363]
 script = ExtResource("1_q7ubi")
@@ -17,11 +35,12 @@ collision_mask = 32768
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1908966047]
 shape = SubResource("CircleShape2D_1mv1j")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=454727474]
-self_modulate = Color(0.9720927, 0.7766192, 0, 1)
-position = Vector2(3.5762787e-07, 0.49999988)
-scale = Vector2(11.999999, 10.999999)
-mesh = SubResource("QuadMesh_1mv1j")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1657271095]
+unique_name_in_owner = true
+position = Vector2(0, 1.0000019)
+scale = Vector2(0.25390625, 0.24218751)
+sprite_frames = SubResource("SpriteFrames_c4nxb")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

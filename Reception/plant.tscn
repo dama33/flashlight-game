@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dbx1w5gvvnflt"]
+
+[ext_resource type="Script" uid="uid://bw3p0cvxwtccr" path="res://Reception/plant.gd" id="1_enkju"]
+[ext_resource type="Texture2D" uid="uid://celgyoykqb16q" path="res://assets/Random Objects and Textures 1/Plant 1.png" id="1_tfoc3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c4nxb"]
+
+[node name="Plant" type="StaticBody2D" unique_id=86017748]
+script = ExtResource("1_enkju")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1570585437]
+unique_name_in_owner = true
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_tfoc3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2045483946]
+shape = SubResource("CircleShape2D_c4nxb")

@@ -1,19 +1,26 @@
 [gd_scene format=3 uid="uid://cd4rl5hx0g4ai"]
 
 [ext_resource type="Script" uid="uid://bq376lj00d1ft" path="res://checkpoint.gd" id="1_ir6d7"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_qkbnx"]
+[ext_resource type="Texture2D" uid="uid://c6vlqhqx52ccr" path="res://assets/Dead/Dead 1.png" id="2_yt2a0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1mv1j"]
-radius = 163.00307
+radius = 57.31492
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_71pa8"]
+light_mode = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_71pa8"]
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Checkpoint" type="Node2D" unique_id=243302455]
 script = ExtResource("1_ir6d7")
+sprite = ExtResource("2_yt2a0")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1523790519]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1745732139]
+unique_name_in_owner = true
 position = Vector2(-5.9604645e-08, 5.9604645e-07)
-scale = Vector2(4.004536, 4.000001)
-mesh = SubResource("SphereMesh_qkbnx")
+scale = Vector2(0.8, 0.8)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=852616933]
 collision_mask = 32768
@@ -24,7 +31,14 @@ shape = SubResource("CircleShape2D_1mv1j")
 [node name="Prompt" type="Label" parent="." unique_id=272656344]
 unique_name_in_owner = true
 visible = false
-offset_right = 40.0
-offset_bottom = 23.0
+material = SubResource("CanvasItemMaterial_71pa8")
+offset_left = -100.0
+offset_top = -78.0
+offset_right = 109.0
+offset_bottom = -55.0
+text = "Press E TO DO SOMETHING"
+label_settings = SubResource("LabelSettings_71pa8")
 horizontal_alignment = 1
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
