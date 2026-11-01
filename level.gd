@@ -42,7 +42,7 @@ func spawn_random_monster() -> void:
 	for i in 20:
 		pos = NavigationServer2D.map_get_random_point(
 			map, layers, true)
-		if pos.distance_to(player_pos) > 150.0:
+		if pos.distance_to(player_pos) > 300.0:
 			break
 
 	var enemy:Node = monster_scene.instantiate()

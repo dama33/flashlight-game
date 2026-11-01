@@ -155,6 +155,17 @@ layout_mode = 2
 focus_mode = 0
 text = "No"
 
+[node name="Fade" type="ColorRect" parent="UI" unique_id=477164569]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
 [node name="ExitBeep" type="AudioStreamPlayer" parent="." unique_id=967536308]
 unique_name_in_owner = true
 stream = ExtResource("6_beep")

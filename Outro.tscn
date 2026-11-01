@@ -1,0 +1,239 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://outro.gd" id="1_outro"]
+[ext_resource type="Script" uid="uid://blm7776ote1we" path="res://footsteps.gd" id="2_steps"]
+[ext_resource type="PackedScene" path="res://DialogBox.tscn" id="3_dialog"]
+[ext_resource type="AudioStream" uid="uid://5fmntuo0i26q" path="res://assets/Sound Effects/foot.mp3" id="4_foot"]
+[ext_resource type="AudioStream" uid="uid://bgw8rdc2xu4ww" path="res://assets/Sound Effects/Monster Squelch.mp3" id="5_squelch"]
+[ext_resource type="AudioStream" uid="uid://d1nxhlpsprupu" path="res://assets/Sound Effects/Explosion.mp3" id="6_boom"]
+[ext_resource type="Texture2D" uid="uid://erm6qulbyhty" path="res://assets/Dead/Dead 4 .png" id="7_remains"]
+[ext_resource type="Texture2D" uid="uid://dqvtjnog1n36c" path="res://assets/Player Walk/Player W 1.png" id="w1"]
+[ext_resource type="Texture2D" uid="uid://bidigj0ihk6l4" path="res://assets/Player Walk/Player W 2.png" id="w2"]
+[ext_resource type="Texture2D" uid="uid://dmquqhgustl6f" path="res://assets/Player Walk/Player W 3.png" id="w3"]
+[ext_resource type="Texture2D" uid="uid://ck74bgd3plmup" path="res://assets/Player Walk/Player W 4.png" id="w4"]
+[ext_resource type="Texture2D" uid="uid://cps3hh4384rgo" path="res://assets/Player Walk/Player W 5.png" id="w5"]
+[ext_resource type="Texture2D" uid="uid://d2kbxpxpt1bkm" path="res://assets/Player Walk/Player W 6.png" id="w6"]
+[ext_resource type="Texture2D" uid="uid://qhub4fjfhg21" path="res://assets/Player Walk/Player W 7.png" id="w7"]
+[ext_resource type="Texture2D" uid="uid://dgrmv5178qima" path="res://assets/Player Walk/Player W 8.png" id="w8"]
+[ext_resource type="Texture2D" uid="uid://cvyxxv0nc0f1v" path="res://assets/Enemy Sprite/Enemy 1.png" id="e1"]
+[ext_resource type="Texture2D" uid="uid://5ufx6oftaghl" path="res://assets/Enemy Sprite/Enemy 2.png" id="e2"]
+[ext_resource type="Texture2D" uid="uid://cbxgqjf7lyb15" path="res://assets/Enemy Sprite/Enemy 3.png" id="e3"]
+[ext_resource type="Texture2D" uid="uid://dqmoxfj4qmwj8" path="res://assets/Enemy Sprite/Enemy 4.png" id="e4"]
+[ext_resource type="Texture2D" uid="uid://b5w6xwuvksyqg" path="res://assets/Enemy Sprite/Enemy 5.png" id="e5"]
+[ext_resource type="Texture2D" uid="uid://cn8vdg2a1l0g0" path="res://assets/Enemy Sprite/Enemy 6.png" id="e6"]
+[ext_resource type="Texture2D" uid="uid://8uw7r6g35ivj" path="res://assets/Explosion Animation/Circle_explosion1.png" id="b1"]
+[ext_resource type="Texture2D" uid="uid://dxsdmgg1olahr" path="res://assets/Explosion Animation/Circle_explosion2.png" id="b2"]
+[ext_resource type="Texture2D" uid="uid://b57wluppevwbk" path="res://assets/Explosion Animation/Circle_explosion3.png" id="b3"]
+[ext_resource type="Texture2D" uid="uid://cnqk3jmjoysvq" path="res://assets/Explosion Animation/Circle_explosion4.png" id="b4"]
+[ext_resource type="Texture2D" uid="uid://bo0jc4a0f0sf0" path="res://assets/Explosion Animation/Circle_explosion5.png" id="b5"]
+[ext_resource type="Texture2D" uid="uid://dd2fqv01fovrb" path="res://assets/Explosion Animation/Circle_explosion6.png" id="b6"]
+[ext_resource type="Texture2D" uid="uid://in2hft8tqdg4" path="res://assets/Explosion Animation/Circle_explosion7.png" id="b7"]
+[ext_resource type="Texture2D" uid="uid://ccbf7s77dmv61" path="res://assets/Explosion Animation/Circle_explosion8.png" id="b8"]
+[ext_resource type="Texture2D" uid="uid://bsxrgt33rdhkm" path="res://assets/Explosion Animation/Circle_explosion9.png" id="b9"]
+[ext_resource type="Texture2D" uid="uid://np5hal6pd4mg" path="res://assets/Explosion Animation/Circle_explosion10.png" id="b10"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_walk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("w1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("w2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("w3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("w4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("w5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("w6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("w7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("w8")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_monster"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("e1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("e2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("e3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("e4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("e5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("e6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_burst"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("b1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("b10")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_foot"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_foot"]
+gradient = SubResource("Gradient_foot")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_unshaded"]
+light_mode = 1
+
+[node name="Outro" type="Node2D" unique_id=409840512]
+script = ExtResource("1_outro")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1451749774]
+color = Color(0.04, 0.04, 0.05, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1304979385]
+zoom = Vector2(2, 2)
+
+[node name="FootLight" type="PointLight2D" parent="." unique_id=420945238]
+unique_name_in_owner = true
+position = Vector2(-260, -40)
+color = Color(1, 0.88, 0.72, 1)
+energy = 1.4
+texture = SubResource("GradientTexture2D_foot")
+texture_scale = 0.55
+
+[node name="Remains" type="Sprite2D" parent="." unique_id=1710602590]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_remains")
+
+[node name="Walker" type="AnimatedSprite2D" parent="." unique_id=2132251121]
+unique_name_in_owner = true
+position = Vector2(-260, -40)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_walk")
+animation = &"walk"
+
+[node name="Footsteps" type="AudioStreamPlayer2D" parent="Walker" unique_id=1384166911]
+stream = ExtResource("4_foot")
+script = ExtResource("2_steps")
+step_distance = 18.0
+start_offset = 0.55
+
+[node name="Monster" type="AnimatedSprite2D" parent="." unique_id=1653906458]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_monster")
+
+[node name="Footsteps" type="AudioStreamPlayer2D" parent="Monster" unique_id=948536747]
+stream = ExtResource("5_squelch")
+volume_db = -3.0
+max_distance = 600.0
+script = ExtResource("2_steps")
+loop_while_moving = true
+
+[node name="Burst" type="AnimatedSprite2D" parent="." unique_id=1927335794]
+unique_name_in_owner = true
+visible = false
+material = SubResource("CanvasItemMaterial_unshaded")
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_burst")
+
+[node name="BurstSound" type="AudioStreamPlayer" parent="." unique_id=422708775]
+unique_name_in_owner = true
+stream = ExtResource("6_boom")
+
+[node name="DialogLayer" type="CanvasLayer" parent="." unique_id=571715190]
+layer = 5
+
+[node name="DialogBox" parent="DialogLayer" unique_id=735694878 instance=ExtResource("3_dialog")]
+unique_name_in_owner = true
+
+[node name="FadeLayer" type="CanvasLayer" parent="." unique_id=351781365]
+layer = 10
+
+[node name="Fade" type="ColorRect" parent="FadeLayer" unique_id=942781810]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="EndLabel" type="Label" parent="FadeLayer" unique_id=1916744687]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.85, 0.2, 0.2, 1)
+theme_override_font_sizes/font_size = 40
+text = "THE END
+
+
+[ press any key ]"
+horizontal_alignment = 1
+vertical_alignment = 1

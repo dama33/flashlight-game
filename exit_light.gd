@@ -10,6 +10,9 @@ signal player_exited
 @export var required_cards: int = 5
 @export var locked_color: Color = Color(1.0, 0.15, 0.1)
 @export var open_color: Color = Color(0.2, 1.0, 0.35)
+# Loaded after the fade to black
+@export_file("*.tscn") var outro_scene: String = "res://Outro.tscn"
+@export var fade_time: float = 1.2
 
 @onready var light: PointLight2D = %Light
 @onready var prompt: Label = %Prompt
@@ -18,6 +21,7 @@ signal player_exited
 @onready var yes_button: Button = %YesButton
 @onready var no_button: Button = %NoButton
 @onready var exit_beep: AudioStreamPlayer = %ExitBeep
+@onready var fade: ColorRect = %Fade
 
 var is_open: bool = false
 var has_exited: bool = false
@@ -71,12 +75,24 @@ func _close_popup() -> void:
 func _on_yes_pressed() -> void:
 	has_exited = true
 	confirm_popup.hide()
-	get_tree().paused = false
 	_update_prompts()
 	exit_beep.play()
 	print("Player stepped out of the dark!")
-	# TODO: win screen
 	player_exited.emit()
+	# Still paused from the popup, so nothing can hit
+	# the player during the fade
+	await _fade_out()
+	if exit_beep.playing:
+		await exit_beep.finished
+	get_tree().paused = false
+	get_tree().change_scene_to_file(outro_scene)
+
+
+func _fade_out() -> void:
+	fade.show()
+	var tween: Tween = create_tween()
+	tween.tween_property(fade, "color:a", 1.0, fade_time)
+	await tween.finished
 
 
 func _update_prompts() -> void:
