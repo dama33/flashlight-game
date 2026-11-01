@@ -4,7 +4,7 @@ extends CharacterBody2D
 const WALL_MASK:int = 1
 const SPEED:float = 300.0
 const DAMAGE:int = 2
-const AGGRO_RANGE:float = 500.0
+const AGGRO_RANGE:float = 300.0
 var speed_scalar:float = 1.0
 var is_in_light:bool = false
 @onready var AttackTimer:Timer = %AttackTimer
