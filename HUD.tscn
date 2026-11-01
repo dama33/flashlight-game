@@ -1,0 +1,33 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_hud"]
+[ext_resource type="Texture2D" uid="uid://5q0c5boe30q4" path="res://assets/Key Card.png" id="2_card"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hud"]
+font_size = 20
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="CanvasLayer" unique_id=1816087198]
+layer = 5
+script = ExtResource("1_hud")
+card_texture = ExtResource("2_card")
+
+[node name="Stats" type="VBoxContainer" parent="." unique_id=642730241]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 216.0
+offset_bottom = 72.0
+mouse_filter = 2
+
+[node name="HealthLabel" type="Label" parent="Stats" unique_id=799878127]
+unique_name_in_owner = true
+layout_mode = 2
+text = "HP: 5 / 5"
+label_settings = SubResource("LabelSettings_hud")
+
+[node name="CardRow" type="HBoxContainer" parent="Stats" unique_id=1093847261]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0

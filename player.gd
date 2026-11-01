@@ -21,6 +21,7 @@ enum PlayerState {
 
 const max_health = 5
 var current_health = 5
+var keycards: int = 0
 
 func _ready():
 	instance = self

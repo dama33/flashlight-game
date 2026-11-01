@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dgrmv5178qima" path="res://assets/Player Walk/Player W 8.png" id="17_j5n4i"]
 [ext_resource type="Texture2D" uid="uid://ca4xp7frglbub" path="res://assets/Dead/Dead 2.png" id="17_op7ga"]
 [ext_resource type="Texture2D" uid="uid://erm6qulbyhty" path="res://assets/Dead/Dead 4 .png" id="18_q13i1"]
+[ext_resource type="PackedScene" path="res://HUD.tscn" id="19_hud"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c4nxb"]
 radius = 19.0
@@ -132,6 +133,8 @@ texture = ExtResource("17_op7ga")
 unique_name_in_owner = true
 visible = false
 texture = ExtResource("18_q13i1")
+
+[node name="HUD" parent="." unique_id=616455894 instance=ExtResource("19_hud")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
