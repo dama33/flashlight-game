@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://cd4rl5hx0g4ai"]
 
+[ext_resource type="Script" uid="uid://bq376lj00d1ft" path="res://checkpoint.gd" id="1_ir6d7"]
+
 [sub_resource type="SphereMesh" id="SphereMesh_qkbnx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1mv1j"]
+radius = 163.00307
 
 [node name="Checkpoint" type="Node2D" unique_id=243302455]
+script = ExtResource("1_ir6d7")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1523790519]
 position = Vector2(-5.9604645e-08, 5.9604645e-07)
@@ -12,6 +16,15 @@ scale = Vector2(4.004536, 4.000001)
 mesh = SubResource("SphereMesh_qkbnx")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=852616933]
+collision_mask = 32768
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1307318851]
 shape = SubResource("CircleShape2D_1mv1j")
+
+[node name="Prompt" type="Label" parent="." unique_id=272656344]
+unique_name_in_owner = true
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+horizontal_alignment = 1
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
