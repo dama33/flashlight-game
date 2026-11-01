@@ -94,9 +94,16 @@ shape = SubResource("CircleShape2D_c4nxb")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=789977764]
 zoom = Vector2(2, 2)
 
-[node name="Node2D" type="Node2D" parent="." unique_id=330850516]
+[node name="Area2D" type="Area2D" parent="." unique_id=31891492]
+collision_layer = 17
+collision_mask = 17
 
-[node name="PointLight2D" type="PointLight2D" parent="Node2D" unique_id=1457794309]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=2069893029]
+polygon = PackedVector2Array(203, 83, 203, -61, 25, 11)
+
+[node name="Node2D" type="Node2D" parent="Area2D" unique_id=330850516]
+
+[node name="PointLight2D" type="PointLight2D" parent="Area2D/Node2D" unique_id=1457794309]
 position = Vector2(22, 12)
 rotation = 1.5707964
 scale = Vector2(1, 1.0084343)
@@ -104,13 +111,6 @@ shadow_enabled = true
 texture = ExtResource("3_i3pqv")
 offset = Vector2(0, -106.04)
 texture_scale = 0.1
-
-[node name="Area2D" type="Area2D" parent="." unique_id=31891492]
-collision_layer = 17
-collision_mask = 17
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=2069893029]
-polygon = PackedVector2Array(204, 88, 202, -66, 25, 11)
 
 [node name="SlowTimer" type="Timer" parent="." unique_id=2123527684]
 unique_name_in_owner = true
@@ -126,6 +126,8 @@ unique_name_in_owner = true
 wait_time = 3.0
 one_shot = true
 
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="SlowTimer" to="." method="_on_slow_timer_timeout"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

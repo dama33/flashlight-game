@@ -2,7 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 const SPEED:int = 15000
-var speed_scalar = 1.0
+var speed_scalar:float = 1.0
 static var instance:Player
 @onready var SlowTimer:Timer = %SlowTimer
 
@@ -70,3 +70,17 @@ func _on_respawn_timer_timeout() -> void:
 	current_health = max_health
 	checkpoints.pop_back().respawn()
 	state = PlayerState.IDLE
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is Monster:
+		body.is_in_light = true
+		
+		
+	pass # Replace with function body.
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body is Monster:
+		body.is_in_light = false
+	pass # Replace with function body.
