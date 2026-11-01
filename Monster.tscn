@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dqmoxfj4qmwj8" path="res://assets/Enemy Sprite/Enemy 4.png" id="5_gyaoo"]
 [ext_resource type="Texture2D" uid="uid://b5w6xwuvksyqg" path="res://assets/Enemy Sprite/Enemy 5.png" id="6_k6i1l"]
 [ext_resource type="Texture2D" uid="uid://cn8vdg2a1l0g0" path="res://assets/Enemy Sprite/Enemy 6.png" id="7_re2lt"]
+[ext_resource type="Script" path="res://footsteps.gd" id="8_steps"]
+[ext_resource type="AudioStream" uid="uid://bgw8rdc2xu4ww" path="res://assets/Sound Effects/Monster Squelch.mp3" id="9_squelch"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c4nxb"]
 animations = [{
@@ -82,6 +84,13 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 position = Vector2(-20, 0)
 occluder = SubResource("OccluderPolygon2D_c4nxb")
+
+[node name="Footsteps" type="AudioStreamPlayer2D" parent="." unique_id=175035772]
+stream = ExtResource("9_squelch")
+volume_db = -3.0
+max_distance = 600.0
+script = ExtResource("8_steps")
+loop_while_moving = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

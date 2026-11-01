@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://ca4xp7frglbub" path="res://assets/Dead/Dead 2.png" id="17_op7ga"]
 [ext_resource type="Texture2D" uid="uid://erm6qulbyhty" path="res://assets/Dead/Dead 4 .png" id="18_q13i1"]
 [ext_resource type="PackedScene" path="res://HUD.tscn" id="19_hud"]
+[ext_resource type="Script" uid="uid://blm7776ote1we" path="res://footsteps.gd" id="20_steps"]
+[ext_resource type="AudioStream" uid="uid://5fmntuo0i26q" path="res://assets/Sound Effects/foot.mp3" id="21_foot"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c4nxb"]
 radius = 19.0
@@ -135,6 +137,12 @@ visible = false
 texture = ExtResource("18_q13i1")
 
 [node name="HUD" parent="." unique_id=616455894 instance=ExtResource("19_hud")]
+
+[node name="Footsteps" type="AudioStreamPlayer2D" parent="." unique_id=1488406968]
+stream = ExtResource("21_foot")
+script = ExtResource("20_steps")
+start_offset = 0.55
+min_speed = 8.5
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
