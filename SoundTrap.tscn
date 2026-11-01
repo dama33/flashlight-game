@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bmpvduauv1yt8"]
+
+[ext_resource type="Script" uid="uid://dd7hsiqp33suc" path="res://sound_trap.gd" id="1_ykw51"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_lcwhw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ncv8o"]
+radius = 29.0
+
+[node name="SoundTrap" type="Node2D" unique_id=60032101]
+script = ExtResource("1_ykw51")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=703663891]
+position = Vector2(0.99999976, -0.5)
+scale = Vector2(28, 15)
+mesh = SubResource("QuadMesh_lcwhw")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1985882191]
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1442346005]
+shape = SubResource("CircleShape2D_ncv8o")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
