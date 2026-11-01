@@ -2,7 +2,7 @@ class_name Monster
 extends CharacterBody2D
 
 const WALL_MASK:int = 1
-const SPEED:float = 235.0
+const SPEED:float = 250.0
 const DAMAGE:int = 2
 const AGGRO_RANGE:float = 250.0
 var speed_scalar:float = 1.0

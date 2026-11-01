@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bbfgoo7xxd6rg" path="res://keycard.gd" id="1_ai2w1"]
 [ext_resource type="Texture2D" uid="uid://5q0c5boe30q4" path="res://assets/Key Card.png" id="1_bjoy8"]
+[ext_resource type="Script" path="res://sound_clip.gd" id="2_clip"]
+[ext_resource type="AudioStream" uid="uid://b3so28ptpkiwi" path="res://assets/Sound Effects/Grab Sound.mp3" id="3_grab"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1mv1j"]
 radius = 19.104973
@@ -20,5 +22,11 @@ collision_mask = 32768
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1189519431]
 shape = SubResource("CircleShape2D_1mv1j")
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="." unique_id=993165426]
+unique_name_in_owner = true
+stream = ExtResource("3_grab")
+script = ExtResource("2_clip")
+clip_start = 0.3
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
