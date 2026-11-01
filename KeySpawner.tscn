@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cgnawgbmmfbu5"]
 
-[ext_resource type="Script" path="res://key_spawner.gd" id="1_spawn"]
+[ext_resource type="Script" uid="uid://ymujhhgs2viu" path="res://key_spawner.gd" id="1_spawn"]
 [ext_resource type="PackedScene" uid="uid://dl20ykir6u6ji" path="res://Keycard.tscn" id="2_card"]
 
 [node name="KeySpawner" type="Node2D" unique_id=1867431663]

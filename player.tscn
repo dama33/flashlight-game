@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" path="res://HUD.tscn" id="19_hud"]
 [ext_resource type="Script" uid="uid://blm7776ote1we" path="res://footsteps.gd" id="20_steps"]
 [ext_resource type="AudioStream" uid="uid://5fmntuo0i26q" path="res://assets/Sound Effects/foot.mp3" id="21_foot"]
+[ext_resource type="Script" uid="uid://dv8jc6i8ak0vl" path="res://damage_flash.gd" id="22_flash"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c4nxb"]
 radius = 19.0
@@ -143,6 +144,11 @@ stream = ExtResource("21_foot")
 script = ExtResource("20_steps")
 start_offset = 0.55
 min_speed = 8.5
+
+[node name="DamageFlash" type="Node" parent="." unique_id=1771390245 node_paths=PackedStringArray("target")]
+script = ExtResource("22_flash")
+target = NodePath("../AnimatedSprite2D")
+flash_color = Color(0.8862745, 0.07058824, 0.14901961, 0.78431374)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

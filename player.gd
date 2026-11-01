@@ -1,6 +1,9 @@
 class_name Player
 extends CharacterBody2D
 
+# Signal when playe takes damage
+signal damaged(amount: int)
+
 const SPEED:int = 15000
 var speed_scalar:float = 1.0
 static var instance:Player
@@ -60,6 +63,7 @@ func _on_slow_timer_timeout() -> void:
 func take_damage(damage:int):
 	if state != PlayerState.DEAD:
 		current_health-=damage
+		damaged.emit(damage)
 		print("Took damage")
 		if current_health <= 0:
 			state = PlayerState.DEAD
