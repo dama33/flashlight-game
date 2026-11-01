@@ -14,11 +14,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 func spawn_random_monster() -> void:
-	var map := navigation_region.get_navigation_map()
-	var layers := navigation_region.navigation_layers
+	var map:RID = navigation_region.get_navigation_map()
+	var layers:int = navigation_region.navigation_layers
 
 	# Wait until the region's polygons are in the map
-	var tries := 0
+	var tries:int = 0
 	while NavigationServer2D.map_get_random_point(
 			map, layers, true) == Vector2.ZERO:
 		tries += 1
@@ -28,14 +28,14 @@ func spawn_random_monster() -> void:
 		await get_tree().physics_frame
 
 	# Pick a point away from the player
-	var player_pos := Player.instance.global_position
-	var pos := Vector2.ZERO
+	var player_pos:Vector2 = Player.instance.global_position
+	var pos:Vector2 = Vector2.ZERO
 	for i in 20:
 		pos = NavigationServer2D.map_get_random_point(
 			map, layers, true)
 		if pos.distance_to(player_pos) > 150.0:
 			break
 
-	var enemy := monster_scene.instantiate()
+	var enemy:Node = monster_scene.instantiate()
 	enemy.global_position = pos
 	add_child(enemy)

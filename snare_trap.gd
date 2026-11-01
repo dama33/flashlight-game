@@ -14,6 +14,6 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	Player.instance.SlowTimer.start()
-	Player.instance.speed_scalar = .1
+	Player.instance.speed_scalar = .35
 	queue_free()
 	pass # Replace with function body.
