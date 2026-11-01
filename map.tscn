@@ -31,7 +31,6 @@
 [ext_resource type="Texture2D" uid="uid://co21jpk25gwyf" path="res://assets/Random Objects and Textures 1/Operating Light.png" id="27_n2jt6"]
 [ext_resource type="Texture2D" uid="uid://erm6qulbyhty" path="res://assets/Dead/Dead 4 .png" id="28_h75vw"]
 [ext_resource type="Texture2D" uid="uid://c16kggmadgi2d" path="res://assets/Dead/Dead 5.png" id="29_h75vw"]
-[ext_resource type="PackedScene" uid="uid://bmpvduauv1yt8" path="res://SoundTrap.tscn" id="30_7vxqa"]
 [ext_resource type="PackedScene" uid="uid://cgnawgbmmfbu5" path="res://KeySpawner.tscn" id="31_qw8h8"]
 [ext_resource type="PackedScene" uid="uid://yxakvsm58tdv" path="res://ExitLight.tscn" id="32_meq34"]
 
@@ -240,7 +239,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_iw27f")
 sources/1 = SubResource("TileSetAtlasSource_dungeon")
 
-[node name="Map" type="Node2D" unique_id=1967431279]
+[node name="Node2D" type="Node2D" unique_id=1967431279]
 script = ExtResource("1_iw27f")
 monster_scene = ExtResource("2_71pa8")
 
@@ -384,9 +383,6 @@ scale = Vector2(1.6666665, 1.6666665)
 
 [node name="SnareTrap3" parent="Reception" unique_id=1142742055 instance=ExtResource("8_05x41")]
 position = Vector2(1676.6666, 3071.6665)
-
-[node name="SoundTrap" parent="Reception" unique_id=60032101 instance=ExtResource("30_7vxqa")]
-position = Vector2(921.6666, 2850)
 
 [node name="Checkpoint" parent="." unique_id=243302455 instance=ExtResource("7_71pa8")]
 position = Vector2(550, 1829)
@@ -766,7 +762,7 @@ position = Vector2(1175, 1289)
 position = Vector2(1171, 905)
 
 [node name="RandomPos4" type="Marker2D" parent="KeySpawner" unique_id=936763391]
-position = Vector2(729, 1187)
+position = Vector2(1110, 1173)
 
 [node name="RandomPos5" type="Marker2D" parent="KeySpawner" unique_id=1720579428]
 position = Vector2(1306, 317)

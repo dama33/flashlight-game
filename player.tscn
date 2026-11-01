@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://blm7776ote1we" path="res://footsteps.gd" id="20_steps"]
 [ext_resource type="AudioStream" uid="uid://5fmntuo0i26q" path="res://assets/Sound Effects/foot.mp3" id="21_foot"]
 [ext_resource type="Script" uid="uid://dv8jc6i8ak0vl" path="res://damage_flash.gd" id="22_flash"]
+[ext_resource type="Texture2D" path="res://assets/FlashlightSoft.png" id="23_softlight"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c4nxb"]
 radius = 19.0
@@ -98,7 +99,9 @@ collision_layer = 17
 collision_mask = 17
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=2069893029]
-polygon = PackedVector2Array(203, 83, 203, -61, 25, 11)
+position = Vector2(6.0928345, 0)
+scale = Vector2(1.2145364, 1)
+polygon = PackedVector2Array(194.7664, 83, 194.7664, -61, 16.766403, 11)
 
 [node name="Node2D" type="Node2D" parent="Area2D" unique_id=330850516]
 
@@ -107,7 +110,7 @@ position = Vector2(22, 12)
 rotation = 1.5707964
 scale = Vector2(1, 1.0084343)
 shadow_enabled = true
-texture = ExtResource("3_i3pqv")
+texture = ExtResource("23_softlight")
 offset = Vector2(0, -106.04)
 texture_scale = 0.1
 

@@ -21,8 +21,15 @@ extends Node2D
 # World px per second; the walk stops at walk_end_x
 @export var walk_speed: float = 22.0
 @export var walk_end_x: float = 200.0
-@export var monster_speed: float = 45.0
-@export var monster_exit_x: float = 420.0
+@export var monster_speed: float = 140.0
+@export var monster_exit_x: float = 380.0
+
+@export_group("Burst sound")
+# Reuses the monster squelch: start at its densest
+# part, pitch it down, fade out after a moment
+@export var burst_sound_offset: float = 0.97
+@export var burst_sound_length: float = 0.6
+@export var burst_pitch: float = 0.75
 
 @export_group("End")
 @export_file("*.tscn") var restart_scene: String = "res://map.tscn"
@@ -69,9 +76,9 @@ func _play() -> void:
 	dialog_box.hide()
 	await _wait(0.8)
 	await _burst()
-	await _wait(0.8)
+	await _wait(0.4)
 	await _monster_leaves()
-	await _wait(1.0)
+	await _wait(0.4)
 	await _fade_to(1.0)
 	end_label.show()
 	_can_restart = true
@@ -113,9 +120,20 @@ func _burst() -> void:
 	remains.show()
 	burst.show()
 	burst.play("default")
-	burst_sound.play()
+	burst_sound.pitch_scale = burst_pitch
+	burst_sound.play(burst_sound_offset)
+	_cut_burst_sound()
 	await burst.animation_finished
 	burst.hide()
+
+
+# Not awaited: runs alongside the burst animation
+func _cut_burst_sound() -> void:
+	await _wait(burst_sound_length)
+	var tween: Tween = create_tween()
+	tween.tween_property(burst_sound, "volume_db", -40.0, 0.15)
+	await tween.finished
+	burst_sound.stop()
 
 
 func _monster_leaves() -> void:

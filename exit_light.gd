@@ -1,8 +1,6 @@
 extends Node2D
 
-# Fake exit: red cone until the player has every
-# keycard, then green. In range + open, E asks to
-# confirm leaving. The game pauses while asking.
+# Cheap exit effect
 
 # Not sure if this is needed
 signal player_exited

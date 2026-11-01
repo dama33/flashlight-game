@@ -1,26 +1,11 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://dqmiumwatko8t"]
 
-[ext_resource type="Script" path="res://outro.gd" id="1_outro"]
+[ext_resource type="Script" uid="uid://b4edym40eud5t" path="res://outro.gd" id="1_outro"]
 [ext_resource type="Script" uid="uid://blm7776ote1we" path="res://footsteps.gd" id="2_steps"]
 [ext_resource type="PackedScene" path="res://DialogBox.tscn" id="3_dialog"]
 [ext_resource type="AudioStream" uid="uid://5fmntuo0i26q" path="res://assets/Sound Effects/foot.mp3" id="4_foot"]
 [ext_resource type="AudioStream" uid="uid://bgw8rdc2xu4ww" path="res://assets/Sound Effects/Monster Squelch.mp3" id="5_squelch"]
-[ext_resource type="AudioStream" uid="uid://d1nxhlpsprupu" path="res://assets/Sound Effects/Explosion.mp3" id="6_boom"]
 [ext_resource type="Texture2D" uid="uid://erm6qulbyhty" path="res://assets/Dead/Dead 4 .png" id="7_remains"]
-[ext_resource type="Texture2D" uid="uid://dqvtjnog1n36c" path="res://assets/Player Walk/Player W 1.png" id="w1"]
-[ext_resource type="Texture2D" uid="uid://bidigj0ihk6l4" path="res://assets/Player Walk/Player W 2.png" id="w2"]
-[ext_resource type="Texture2D" uid="uid://dmquqhgustl6f" path="res://assets/Player Walk/Player W 3.png" id="w3"]
-[ext_resource type="Texture2D" uid="uid://ck74bgd3plmup" path="res://assets/Player Walk/Player W 4.png" id="w4"]
-[ext_resource type="Texture2D" uid="uid://cps3hh4384rgo" path="res://assets/Player Walk/Player W 5.png" id="w5"]
-[ext_resource type="Texture2D" uid="uid://d2kbxpxpt1bkm" path="res://assets/Player Walk/Player W 6.png" id="w6"]
-[ext_resource type="Texture2D" uid="uid://qhub4fjfhg21" path="res://assets/Player Walk/Player W 7.png" id="w7"]
-[ext_resource type="Texture2D" uid="uid://dgrmv5178qima" path="res://assets/Player Walk/Player W 8.png" id="w8"]
-[ext_resource type="Texture2D" uid="uid://cvyxxv0nc0f1v" path="res://assets/Enemy Sprite/Enemy 1.png" id="e1"]
-[ext_resource type="Texture2D" uid="uid://5ufx6oftaghl" path="res://assets/Enemy Sprite/Enemy 2.png" id="e2"]
-[ext_resource type="Texture2D" uid="uid://cbxgqjf7lyb15" path="res://assets/Enemy Sprite/Enemy 3.png" id="e3"]
-[ext_resource type="Texture2D" uid="uid://dqmoxfj4qmwj8" path="res://assets/Enemy Sprite/Enemy 4.png" id="e4"]
-[ext_resource type="Texture2D" uid="uid://b5w6xwuvksyqg" path="res://assets/Enemy Sprite/Enemy 5.png" id="e5"]
-[ext_resource type="Texture2D" uid="uid://cn8vdg2a1l0g0" path="res://assets/Enemy Sprite/Enemy 6.png" id="e6"]
 [ext_resource type="Texture2D" uid="uid://8uw7r6g35ivj" path="res://assets/Explosion Animation/Circle_explosion1.png" id="b1"]
 [ext_resource type="Texture2D" uid="uid://dxsdmgg1olahr" path="res://assets/Explosion Animation/Circle_explosion2.png" id="b2"]
 [ext_resource type="Texture2D" uid="uid://b57wluppevwbk" path="res://assets/Explosion Animation/Circle_explosion3.png" id="b3"]
@@ -31,6 +16,31 @@
 [ext_resource type="Texture2D" uid="uid://ccbf7s77dmv61" path="res://assets/Explosion Animation/Circle_explosion8.png" id="b8"]
 [ext_resource type="Texture2D" uid="uid://bsxrgt33rdhkm" path="res://assets/Explosion Animation/Circle_explosion9.png" id="b9"]
 [ext_resource type="Texture2D" uid="uid://np5hal6pd4mg" path="res://assets/Explosion Animation/Circle_explosion10.png" id="b10"]
+[ext_resource type="Texture2D" uid="uid://cvyxxv0nc0f1v" path="res://assets/Enemy Sprite/Enemy 1.png" id="e1"]
+[ext_resource type="Texture2D" uid="uid://5ufx6oftaghl" path="res://assets/Enemy Sprite/Enemy 2.png" id="e2"]
+[ext_resource type="Texture2D" uid="uid://cbxgqjf7lyb15" path="res://assets/Enemy Sprite/Enemy 3.png" id="e3"]
+[ext_resource type="Texture2D" uid="uid://dqmoxfj4qmwj8" path="res://assets/Enemy Sprite/Enemy 4.png" id="e4"]
+[ext_resource type="Texture2D" uid="uid://b5w6xwuvksyqg" path="res://assets/Enemy Sprite/Enemy 5.png" id="e5"]
+[ext_resource type="Texture2D" uid="uid://cn8vdg2a1l0g0" path="res://assets/Enemy Sprite/Enemy 6.png" id="e6"]
+[ext_resource type="Texture2D" uid="uid://dqvtjnog1n36c" path="res://assets/Player Walk/Player W 1.png" id="w1"]
+[ext_resource type="Texture2D" uid="uid://bidigj0ihk6l4" path="res://assets/Player Walk/Player W 2.png" id="w2"]
+[ext_resource type="Texture2D" uid="uid://dmquqhgustl6f" path="res://assets/Player Walk/Player W 3.png" id="w3"]
+[ext_resource type="Texture2D" uid="uid://ck74bgd3plmup" path="res://assets/Player Walk/Player W 4.png" id="w4"]
+[ext_resource type="Texture2D" uid="uid://cps3hh4384rgo" path="res://assets/Player Walk/Player W 5.png" id="w5"]
+[ext_resource type="Texture2D" uid="uid://d2kbxpxpt1bkm" path="res://assets/Player Walk/Player W 6.png" id="w6"]
+[ext_resource type="Texture2D" uid="uid://qhub4fjfhg21" path="res://assets/Player Walk/Player W 7.png" id="w7"]
+[ext_resource type="Texture2D" uid="uid://dgrmv5178qima" path="res://assets/Player Walk/Player W 8.png" id="w8"]
+
+[sub_resource type="Gradient" id="Gradient_foot"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_foot"]
+gradient = SubResource("Gradient_foot")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_walk"]
 animations = [{
@@ -59,7 +69,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("w8")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk",
 "speed": 5.0
 }]
@@ -85,10 +95,13 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("e6")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 10.0
 }]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_unshaded"]
+light_mode = 1
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_burst"]
 animations = [{
@@ -123,24 +136,10 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("b10")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 15.0
 }]
-
-[sub_resource type="Gradient" id="Gradient_foot"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_foot"]
-gradient = SubResource("Gradient_foot")
-width = 256
-height = 256
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.5, 0)
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_unshaded"]
-light_mode = 1
 
 [node name="Outro" type="Node2D" unique_id=409840512]
 script = ExtResource("1_outro")
@@ -200,7 +199,8 @@ sprite_frames = SubResource("SpriteFrames_burst")
 
 [node name="BurstSound" type="AudioStreamPlayer" parent="." unique_id=422708775]
 unique_name_in_owner = true
-stream = ExtResource("6_boom")
+stream = ExtResource("5_squelch")
+volume_db = 3.0
 
 [node name="DialogLayer" type="CanvasLayer" parent="." unique_id=571715190]
 layer = 5

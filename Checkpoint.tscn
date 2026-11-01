@@ -2,12 +2,18 @@
 
 [ext_resource type="Script" uid="uid://bq376lj00d1ft" path="res://checkpoint.gd" id="1_ir6d7"]
 [ext_resource type="Texture2D" uid="uid://c6vlqhqx52ccr" path="res://assets/Dead/Dead 1.png" id="2_yt2a0"]
+[ext_resource type="Script" path="res://sound_clip.gd" id="3_clip"]
+[ext_resource type="AudioStream" uid="uid://bgw8rdc2xu4ww" path="res://assets/Sound Effects/Monster Squelch.mp3" id="4_squelch"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1mv1j"]
 radius = 57.31492
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_71pa8"]
 light_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_split"]
+offsets = PackedFloat32Array(0, 0.7, 1)
+colors = PackedColorArray(0.75, 0.08, 0.08, 1, 0.5, 0.03, 0.03, 1, 0.35, 0, 0, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_71pa8"]
 outline_size = 2
@@ -39,6 +45,35 @@ offset_bottom = -55.0
 text = "Press E to split"
 label_settings = SubResource("LabelSettings_71pa8")
 horizontal_alignment = 1
+
+[node name="SplitSound" type="AudioStreamPlayer2D" parent="." unique_id=1208555512]
+unique_name_in_owner = true
+stream = ExtResource("4_squelch")
+pitch_scale = 1.2
+script = ExtResource("3_clip")
+clip_start = 1.45
+clip_length = 0.32
+pitch_jitter = 0.05
+
+[node name="SplitParticles" type="CPUParticles2D" parent="." unique_id=1733494371]
+unique_name_in_owner = true
+z_index = 2
+material = SubResource("CanvasItemMaterial_71pa8")
+emitting = false
+amount = 40
+lifetime = 0.45
+one_shot = true
+explosiveness = 0.35
+local_coords = false
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 120.0
+tangential_accel_min = -60.0
+tangential_accel_max = 60.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_split")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
