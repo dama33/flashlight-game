@@ -15,7 +15,7 @@ var is_in_light:bool = false
 # At this distance or farther, error is max
 @export var error_falloff:float = 300.0
 # Seconds between new guesses
-@export var repath_interval:float = 0.8
+@export var repath_interval:float = 0.4
 @onready var navi_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var occulder: LightOccluder2D = $LightOccluder2D
 var _repath_timer:float = 0.0
