@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://geoy4lcoks81"]
+
+[ext_resource type="Script" uid="uid://cjpx8vxig2cf8" path="res://pit_trap.gd" id="1_5imai"]
+[ext_resource type="Texture2D" uid="uid://d2iosfn1sf8qa" path="res://assets/Bear and Hole/Hole.png" id="1_781r2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g5wgg"]
+radius = 43.002907
+
+[node name="PitTrap" type="Node2D" unique_id=816176]
+script = ExtResource("1_5imai")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1030078813]
+texture = ExtResource("1_781r2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1965193482]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=299746502]
+position = Vector2(2, 2)
+shape = SubResource("CircleShape2D_g5wgg")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

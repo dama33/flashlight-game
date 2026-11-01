@@ -26,10 +26,11 @@ func _ready():
 	pass;
 
 func _process(delta: float) -> void:	
-	look_at(get_global_mouse_position())
-	if Input.is_action_just_pressed("interact") and current_checkpoint != null and !current_checkpoint.already_found:
-		checkpoints.append(current_checkpoint)
-		current_checkpoint.interact()
+	if state != PlayerState.DEAD:
+		look_at(get_global_mouse_position())
+		if Input.is_action_just_pressed("interact") and current_checkpoint != null and !current_checkpoint.already_found:
+			checkpoints.append(current_checkpoint)
+			current_checkpoint.interact()
 	
 func _physics_process(delta: float) -> void:
 	if state != PlayerState.DEAD:
