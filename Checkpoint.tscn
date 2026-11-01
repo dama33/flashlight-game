@@ -26,5 +26,7 @@ unique_name_in_owner = true
 visible = false
 offset_right = 40.0
 offset_bottom = 23.0
+text = "E"
 horizontal_alignment = 1
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -19,6 +19,7 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	print("Checkpoint range!")
+	Prompt.set_visible(true);
 	if !already_found:
 		Player.instance.checkpoints.append(self)
 		already_found = true
