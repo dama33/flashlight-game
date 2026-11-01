@@ -376,6 +376,9 @@ scale = Vector2(1.6666665, 1.6666665)
 [node name="SnareTrap3" parent="Reception" unique_id=1142742055 instance=ExtResource("8_05x41")]
 position = Vector2(1676.6666, 3071.6665)
 
+[node name="SoundTrap" parent="Reception" unique_id=60032101 instance=ExtResource("30_7vxqa")]
+position = Vector2(921.6666, 2850)
+
 [node name="Checkpoint" parent="." unique_id=243302455 instance=ExtResource("7_71pa8")]
 position = Vector2(550, 1829)
 
@@ -433,7 +436,7 @@ position = Vector2(1027, 1169)
 position = Vector2(699, 1198)
 
 [node name="SnareTrap" parent="Hospital" unique_id=171085438 instance=ExtResource("8_05x41")]
-position = Vector2(879, 1301)
+position = Vector2(865, 1340)
 
 [node name="Checkpoint2" parent="Hospital" unique_id=628700633 instance=ExtResource("7_71pa8")]
 position = Vector2(1032, 1114)
@@ -643,7 +646,7 @@ texture = ExtResource("15_4sf5t")
 position = Vector2(-1366, 525)
 
 [node name="SnareTrap" parent="." unique_id=852773388 instance=ExtResource("8_05x41")]
-position = Vector2(1051, 955)
+position = Vector2(1068, 950)
 
 [node name="SnareTrap2" parent="." unique_id=1582418354 instance=ExtResource("8_05x41")]
 position = Vector2(860, 807)
@@ -741,6 +744,3 @@ texture = ExtResource("27_n2jt6")
 position = Vector2(1181, 518)
 rotation = 1.5707964
 texture = ExtResource("27_n2jt6")
-
-[node name="SoundTrap" parent="." unique_id=60032101 instance=ExtResource("30_7vxqa")]
-position = Vector2(523, 1721)
