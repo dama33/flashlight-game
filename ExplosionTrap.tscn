@@ -4,13 +4,23 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1mv1j"]
 
+[sub_resource type="QuadMesh" id="QuadMesh_1mv1j"]
+
 [node name="ExplosionTrap" type="Node2D" unique_id=1845037286]
 script = ExtResource("1_mjnbr")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=975949786]
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1779424287]
 shape = SubResource("CircleShape2D_1mv1j")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=576139771]
+self_modulate = Color(1, 0, 0.5019608, 1)
+position = Vector2(2.3841858e-07, 2.3841858e-07)
+scale = Vector2(8.000001, 8)
+mesh = SubResource("QuadMesh_1mv1j")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
