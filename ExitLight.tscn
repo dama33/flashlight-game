@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dmmdgfdios6bi" path="res://assets/UI/button-1.png" id="3_btn1"]
 [ext_resource type="Texture2D" uid="uid://cu1wp78p4tsm" path="res://assets/UI/button-3.png" id="4_btn3"]
 [ext_resource type="Texture2D" uid="uid://dmafrbq3torfb" path="res://assets/ExitSpill.png" id="5_spill"]
+[ext_resource type="AudioStream" uid="uid://lcylveq41t43" path="res://assets/Sound Effects/Card BEEP.mp3" id="6_beep"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_exit"]
 radius = 48.0
@@ -153,6 +154,10 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 focus_mode = 0
 text = "No"
+
+[node name="ExitBeep" type="AudioStreamPlayer" parent="." unique_id=967536308]
+unique_name_in_owner = true
+stream = ExtResource("6_beep")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

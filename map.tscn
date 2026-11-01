@@ -258,7 +258,7 @@ visible = false
 navigation_polygon = SubResource("NavigationPolygon_c4nxb")
 
 [node name="Ambience" parent="." unique_id=355808012 instance=ExtResource("5_a454a")]
-volume_db = 9.0
+volume_db = -9.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1245209590]
 texture_filter = 1

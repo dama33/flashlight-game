@@ -17,6 +17,7 @@ signal player_exited
 @onready var confirm_popup: Control = %ConfirmPopup
 @onready var yes_button: Button = %YesButton
 @onready var no_button: Button = %NoButton
+@onready var exit_beep: AudioStreamPlayer = %ExitBeep
 
 var is_open: bool = false
 var has_exited: bool = false
@@ -72,6 +73,7 @@ func _on_yes_pressed() -> void:
 	confirm_popup.hide()
 	get_tree().paused = false
 	_update_prompts()
+	exit_beep.play()
 	print("Player stepped out of the dark!")
 	# TODO: win screen
 	player_exited.emit()
