@@ -11,8 +11,6 @@ func _ready() -> void:
 	for child: Node in get_children():
 		if child is Marker2D:
 			spots.append(child as Marker2D)
-	if spots.size() < count:
-		push_warning("KeySpawner: only %d spots for %d cards" % [spots.size(), count])
 
 	spots.shuffle()
 	for i: int in mini(count, spots.size()):
