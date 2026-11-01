@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cuo7iv4un8f7p"]
+
+[ext_resource type="Script" uid="uid://ci5321do5lly" path="res://ambience.gd" id="1_amb"]
+[ext_resource type="AudioStream" uid="uid://b8rt315dds5q8" path="res://assets/Sound Effects/Ambient 1.mp3" id="2_amb1"]
+[ext_resource type="AudioStream" uid="uid://cicym188ud0uq" path="res://assets/Sound Effects/Ambient 2.mp3" id="3_amb2"]
+
+[node name="Ambience" type="AudioStreamPlayer" unique_id=355808012]
+process_mode = 3
+volume_db = 10.208
+script = ExtResource("1_amb")
+tracks = Array[AudioStream]([ExtResource("2_amb1"), ExtResource("3_amb2")])

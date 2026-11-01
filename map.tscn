@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c57yc4fdslxy8" path="res://player.tscn" id="3_urblq"]
 [ext_resource type="PackedScene" uid="uid://dhifdpnm4gbtm" path="res://Intro.tscn" id="3_yy28u"]
 [ext_resource type="Texture2D" uid="uid://bh0l4sdr6ipv5" path="res://assets/Map/Tileset.png" id="4_tiles"]
+[ext_resource type="PackedScene" uid="uid://cuo7iv4un8f7p" path="res://Ambience.tscn" id="5_a454a"]
 [ext_resource type="PackedScene" uid="uid://cd4rl5hx0g4ai" path="res://Checkpoint.tscn" id="7_71pa8"]
 [ext_resource type="PackedScene" uid="uid://dofjhorhhlduj" path="res://SnareTrap.tscn" id="8_05x41"]
 [ext_resource type="Texture2D" uid="uid://g6yi5nblcp40" path="res://assets/Random Objects and Textures 1/Blood Stain 1.png" id="8_jk4ss"]
@@ -255,6 +256,9 @@ centered = false
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1717126774]
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_c4nxb")
+
+[node name="Ambience" parent="." unique_id=355808012 instance=ExtResource("5_a454a")]
+volume_db = 9.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1245209590]
 texture_filter = 1

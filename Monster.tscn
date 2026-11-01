@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dqmoxfj4qmwj8" path="res://assets/Enemy Sprite/Enemy 4.png" id="5_gyaoo"]
 [ext_resource type="Texture2D" uid="uid://b5w6xwuvksyqg" path="res://assets/Enemy Sprite/Enemy 5.png" id="6_k6i1l"]
 [ext_resource type="Texture2D" uid="uid://cn8vdg2a1l0g0" path="res://assets/Enemy Sprite/Enemy 6.png" id="7_re2lt"]
-[ext_resource type="Script" path="res://footsteps.gd" id="8_steps"]
+[ext_resource type="Script" uid="uid://blm7776ote1we" path="res://footsteps.gd" id="8_steps"]
 [ext_resource type="AudioStream" uid="uid://bgw8rdc2xu4ww" path="res://assets/Sound Effects/Monster Squelch.mp3" id="9_squelch"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c4nxb"]
@@ -71,7 +71,7 @@ debug_color = Color(0.9974902, 0, 0.17474338, 0.41960785)
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=106201166]
 unique_name_in_owner = true
-wait_time = 1.5
+wait_time = 0.75
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1628896825]
 path_desired_distance = 8.0
